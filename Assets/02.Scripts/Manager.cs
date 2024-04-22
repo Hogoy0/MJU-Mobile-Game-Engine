@@ -6,19 +6,21 @@ using static UnityEditor.PlayerSettings;
 
 public class Manager : MonoBehaviour
 {
-    public GameObject[] slimelist;
+    public GameObject[] slimelist = new GameObject[4];
     public GameObject slime;
-    public GameObject[] SlimePrefebList;
+    public GameObject[] SlimePrefebList = new GameObject[3];
     float spawnX = -4f;
     public int counting = 0;
     public int playerinput = 0;
     public int splitcounting = 0;
+    int SelectedSlimeSize = 0;
+    Vector3 pos;
+    Vector3 offset = new Vector3(1f, 0f, 0f);
     void Start()
     {
-        SlimePrefebList = new GameObject[3];
-        slimelist = new GameObject[4];
         spawn();
         select1();
+        slimelist[0].GetComponent<Character>().SlimeSize = 3;
 
     }
 
@@ -43,13 +45,20 @@ public class Manager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (splitcounting < 3)
+            if (splitcounting < 3 && playerinput < 5)
             {
+                CheckSplitSlimeSize();
                 Split();
             }
 
         }
 
+        CheckPlyaerSelectInput();
+
+    }
+
+    void CheckPlyaerSelectInput()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             select1();
@@ -80,7 +89,7 @@ public class Manager : MonoBehaviour
             Vector3 spawnPosition = new Vector3(spawnX, 0f, 0f);
 
             // 새로운 게임 오브젝트 생성
-            slimelist[counting] = Instantiate(slime, spawnPosition, Quaternion.identity);
+            slimelist[counting] = Instantiate(SlimePrefebList[0], spawnPosition, Quaternion.identity);
 
             // x 좌표 증가
             spawnX += 4f;
@@ -155,30 +164,51 @@ public class Manager : MonoBehaviour
         Vector3 pos; 
         Vector3 offset = new Vector3(1f, 0f, 0f);
         pos = slimelist[playerinput].transform.position; //현재 선택한 슬라임의 위치 저장
+
         if (slimelist[playerinput] != null) //만약 선택한 번호의 슬라임 리스트가 비어있지 않다면
         {
             Destroy(slimelist[playerinput]); //현재 고른 슬라임 파괴
             slimelist[playerinput] = null; //그리고 파괴한 슬라임이 있던 프리펩 파괴
         }
+
+        if (SelectedSlimeSize == 3)
+        {
+            SplitSlimeCreate(SlimePrefebList[1]);
+        }
+        if (SelectedSlimeSize == 2)
+        {
+            SplitSlimeCreate(SlimePrefebList[2]);
+        }
+        playerinput = 5;
+        
+
+    }
+
+    void SplitSlimeCreate(GameObject CreationSlime)
+    {
         for (int i = 0; i < 4; i++)
         {
-            if (slimelist[i] == null)
+            if (slimelist[i] == null) // 슬라임리스트 배열을 0부터3까지 돌면서, 만약 비어있는 배열을 찾으면
             {
-                slimelist[i] = Instantiate(slime, pos - offset, Quaternion.identity);
-                slimelist[i].GetComponent<Character>().ListNumber = i; 
-                break;
+                slimelist[i] = Instantiate(CreationSlime, pos - offset, Quaternion.identity);  //분열하기 전 슬라임의 왼쪽 x좌표 - 1에 슬라임 생성
+                slimelist[i].GetComponent<Character>().ListNumber = i; //분열한 슬라임이 슬라임리스트의 몇번째 배열이 들어갔는지 슬라임 프리펩 스크립트에 저장해놓음
+                slimelist[i].GetComponent<Character>().SlimeSize = SelectedSlimeSize - 1;
+                break;                                                 //for문 탈출
             }
         }
         for (int i = 0; i < 4; i++)
         {
             if (slimelist[i] == null)
             {
-                slimelist[i] = Instantiate(slime, pos + offset, Quaternion.identity);
+                slimelist[i] = Instantiate(CreationSlime, pos + offset, Quaternion.identity);
                 slimelist[i].GetComponent<Character>().ListNumber = i;
+                slimelist[i].GetComponent<Character>().SlimeSize = SelectedSlimeSize - 1;
                 break;
             }
         }
     }
+
+    
     
     void murge()
     {
@@ -213,6 +243,11 @@ public class Manager : MonoBehaviour
     void pung()
     {
         Destroy(slimelist[playerinput]);
+    }
+
+    void CheckSplitSlimeSize()
+    {
+        SelectedSlimeSize = slimelist[playerinput].GetComponent<Character>().SlimeSize;
     }
 }
 

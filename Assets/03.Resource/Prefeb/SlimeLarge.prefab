@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7549174508609184723}
   - component: {fileID: 5398307693062922184}
   m_Layer: 0
-  m_Name: Slime_Large
+  m_Name: SlimeLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,3 +175,4 @@ MonoBehaviour:
   Selected: 0
   SlimeRaycast: 0
   ListNumber: 10
+  SizeState: None

@@ -12,6 +12,8 @@ public class Character : MonoBehaviour
     public bool SlimeRaycast = false;
     public RaycastHit2D rayhit;
     public int ListNumber = 10;
+    public int SlimeSize = 0;
+
     void Start()
     {        
     }

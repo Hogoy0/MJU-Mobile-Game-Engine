@@ -168,7 +168,7 @@ Transform:
   - {fileID: 1212454857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &852943865
+--- !u!1 &890173738
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +176,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 852943867}
-  - component: {fileID: 852943866}
+  - component: {fileID: 890173740}
+  - component: {fileID: 890173739}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -185,33 +185,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &852943866
+--- !u!114 &890173739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852943865}
+  m_GameObject: {fileID: 890173738}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d10f618d23b9f7749aa3467bf1a5f70d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimelist: []
-  slime: {fileID: 6092068625561939683, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+  slimelist:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  slime: {fileID: 0}
+  SlimePrefebList:
+  - {fileID: 6092068625561939683, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+  - {fileID: 2591174487216460338, guid: 29cecdba1aa236349ba7de9a92430a60, type: 3}
+  - {fileID: 104752259191348080, guid: f30d2cfdeb3d30842870a8693f1754e2, type: 3}
   counting: 0
   playerinput: 0
   splitcounting: 0
---- !u!4 &852943867
+--- !u!4 &890173740
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852943865}
+  m_GameObject: {fileID: 890173738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1608713, y: -0.5508983, z: 0.15196411}
+  m_LocalPosition: {x: 0.52413905, y: 0.63603824, z: 0.05030968}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -231,7 +239,7 @@ GameObject:
   - component: {fileID: 1212454858}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,4 +724,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 2046600231}
   - {fileID: 35180130}
-  - {fileID: 852943867}
+  - {fileID: 890173740}
