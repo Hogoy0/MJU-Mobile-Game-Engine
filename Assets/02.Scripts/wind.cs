@@ -15,7 +15,7 @@ public class wind : MonoBehaviour
     private void ApplyWindForce()
     {
         // 바람의 힘을 적용하기 위해 오브젝트 주변에 있는 모든 Rigidbody 2D에 힘을 가함
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 2f); // 반경 2 안에 있는 모든 콜라이더 탐색탐색탐색
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f); // 반경 2 안에 있는 모든 콜라이더 탐색탐색탐색
         foreach (Collider2D collider in colliders)
         {
             Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
