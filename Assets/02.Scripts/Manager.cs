@@ -103,6 +103,40 @@ public class Manager : MonoBehaviour
 
     }
 
+    public void UIButtonSplit()
+    {
+        CheckSelectedSlimeSize();
+        if (splitcounting < 3 && playerinput < 5)
+        {
+            if (SelectedSlimeSize > 1)
+            {
+                Split();
+            }
+        }
+    }
+
+    public void UIButtonMurge()
+    {
+        CheckSelectedSlimeSize();
+        murge();
+    }
+
+    public void UIButtonSlimeSelectionChanger()
+    {
+        
+
+    }
+
+    void PlayerInputCheck()
+    {
+        if (playerinput == 3)
+        {
+            playerinput = 0;
+        }
+        
+    }
+
+
 
 
     void select1()
