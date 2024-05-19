@@ -5,8 +5,10 @@ using UnityEngine.EventSystems;
 
 public class Character : MonoBehaviour
 {
-    public float moveSpeed = 5f; // 이동 속도
+    public float moveSpeed = 2f; // 이동 속도
     public bool Selected = false;
+    public bool MoveLeft = false;
+    public bool MoveRight = false;
     float JumpPower = 7;
     bool isJump = false;
     Vector2 playerDir;
@@ -32,6 +34,20 @@ public class Character : MonoBehaviour
         {
             Jump();
             Move();
+        }
+        if (MoveLeft)
+        {
+            Vector3 movement = new Vector3(-1f, 0f, 0f) * moveSpeed * Time.deltaTime;
+            playerDir = Vector2.left;
+            spriterenderer.flipX = true;
+            transform.Translate(movement);
+        }
+        if (MoveRight)
+        {
+            Vector3 movement = new Vector3(1f, 0f, 0f) * moveSpeed * Time.deltaTime;
+            playerDir = Vector2.right;
+            spriterenderer.flipX = false;
+            transform.Translate(movement);
         }
     }
 
@@ -76,7 +92,7 @@ public class Character : MonoBehaviour
         
     }
 
-    void Jump()
+    public void Jump()
     {
         if (Input.GetButtonDown("Jump"))
         {
@@ -86,6 +102,31 @@ public class Character : MonoBehaviour
             }
             isJump = true;
         }
+    }
+
+    public void UIJump()
+    {
+        if (isJump == false)
+        {
+            rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+        }
+        isJump = true;
+    }
+
+    public void UILeftMove()
+    {
+        Vector3 movement = new Vector3(-4f, 0f, 0f) * moveSpeed * Time.deltaTime;
+        playerDir = Vector2.left;
+        spriterenderer.flipX = true;
+        transform.Translate(movement);
+    }
+
+    public void UIRightMove()
+    {
+        Vector3 movement = new Vector3(1f, 0f, 0f) * moveSpeed * Time.deltaTime;
+        playerDir = Vector2.right;
+        spriterenderer.flipX = false;
+        transform.Translate(movement);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
