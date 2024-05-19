@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using static UnityEditor.PlayerSettings;
 
 public class Manager : MonoBehaviour
@@ -9,11 +10,13 @@ public class Manager : MonoBehaviour
     public GameObject[] slimelist = new GameObject[4];
     public GameObject slime;
     public GameObject[] SlimePrefebList = new GameObject[3];
+    private Character UICharacterController;
     float spawnX = -4f;
     public int counting = 0;
     public int playerinput = 0;
     public int splitcounting = 0;
     public int SelectedSlimeSize = 0;
+    public int selectedIndex = 0;
     Vector3 pos;
     Vector3 offset = new Vector3(1f, 0f, 0f);
     void Start()
@@ -21,6 +24,7 @@ public class Manager : MonoBehaviour
         spawn();
         select1();
         slimelist[0].GetComponent<Character>().SlimeSize = 3;
+        UICharacterController = slimelist[0].GetComponent<Character>();
 
     }
 
@@ -103,6 +107,31 @@ public class Manager : MonoBehaviour
 
     }
 
+    public void UIButtonLeftmove()
+    {
+        UICharacterController.MoveLeft = true;
+    }
+
+    public void UIButtonLeftmoveEnd()
+    {
+        UICharacterController.MoveLeft = false;
+    }
+
+    public void UIButtonRightmove()
+    {
+        UICharacterController.MoveRight = true;
+    }
+    public void UIButtonRightmoveEnd()
+    {
+        UICharacterController.MoveRight = false;
+    }
+
+    public void UIButtonJump()
+    {
+        UICharacterController.UIJump();
+    }
+
+
     public void UIButtonSplit()
     {
         CheckSelectedSlimeSize();
@@ -123,18 +152,53 @@ public class Manager : MonoBehaviour
 
     public void UIButtonSlimeSelectionChanger()
     {
-        
+        int originalIndex = selectedIndex;
 
-    }
-
-    void PlayerInputCheck()
-    {
-        if (playerinput == 3)
+        // 다음 인덱스를 찾음
+        do
         {
-            playerinput = 0;
+            selectedIndex = (selectedIndex + 1) % slimelist.Length;
+            Debug.Log(slimelist.Length);
         }
-        
+        while (slimelist[selectedIndex] == null && selectedIndex != originalIndex);
+
+        // 다음 캐릭터 선택
+        if (slimelist[selectedIndex] != null)
+        {
+            SelectCharacter(selectedIndex);
+
+
+        }
     }
+
+    void SelectCharacter(int index)
+    {
+
+        if (index == 0)
+        {
+            select1();
+            UICharacterController = slimelist[0].GetComponent<Character>();
+        }
+
+        else if (index == 1)
+        {
+            select2();
+            UICharacterController = slimelist[1].GetComponent<Character>();
+        }
+        else if (index == 2)
+        {
+            select3();
+            UICharacterController = slimelist[2].GetComponent<Character>();
+        }
+        else if (index == 3)
+        {
+            select4();
+            UICharacterController = slimelist[3].GetComponent<Character>();
+        }
+
+    }
+
+
 
 
 
@@ -142,6 +206,7 @@ public class Manager : MonoBehaviour
     void select1()
     {
         playerinput = 0;
+        selectedIndex = 0;
         if (slimelist[0] != null)
         {
             setseletion();
@@ -152,6 +217,7 @@ public class Manager : MonoBehaviour
     void select2()
     {
         playerinput = 1;
+        selectedIndex = 1;
         if (slimelist[1] != null)
         {
             setseletion();
@@ -162,6 +228,8 @@ public class Manager : MonoBehaviour
     void select3()
     {
         playerinput = 2;
+        selectedIndex = 2;
+
         if (slimelist[2] != null)
         {
             setseletion();
@@ -171,6 +239,8 @@ public class Manager : MonoBehaviour
     void select4()
     {
         playerinput = 3;
+        selectedIndex = 3;
+
         if (slimelist[3] != null)
         {
             setseletion();
@@ -250,19 +320,24 @@ public class Manager : MonoBehaviour
         if (WillSelectNumber == 0)
         {
             select1();
+            UICharacterController = slimelist[0].GetComponent<Character>();
         }
         else if (WillSelectNumber == 1)
         {
             select2();
+            UICharacterController = slimelist[1].GetComponent<Character>();
         }
         else if (WillSelectNumber == 2)
         {
             select3();
+            UICharacterController = slimelist[2].GetComponent<Character>();
         }
         else if (WillSelectNumber == 3)
         {
             select4();
+            UICharacterController = slimelist[3].GetComponent<Character>();
         }
+        selectedIndex = WillSelectNumber;
     }
     
     
@@ -331,7 +406,13 @@ public class Manager : MonoBehaviour
     {
         SelectedSlimeSize = slimelist[playerinput].GetComponent<Character>().SlimeSize;
     }
+
+
+    
+
 }
+
+
 
    
 
