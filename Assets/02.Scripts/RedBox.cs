@@ -5,7 +5,8 @@ using UnityEngine;
 public class RedBox : MonoBehaviour
 {
     public LayerMask pushableLayer; // 밀 수 있는 레이어 마스크
-    public LayerMask nonPushableLayer; // 밀 수 없는 레이어 마스크
+    public LayerMask nonPushableLayer1; // 밀 수 없는 첫 번째 레이어 마스크
+    public LayerMask nonPushableLayer2; // 밀 수 없는 두 번째 레이어 마스크
     private Rigidbody2D rb;
     private bool isBeingPushed;
     private Collider2D pushingCharacter;
@@ -40,7 +41,7 @@ public class RedBox : MonoBehaviour
             pushingCharacter = collision.collider;
             rb.isKinematic = false; // 밀리는 동안 박스를 물리적으로 이동 가능하게 설정
         }
-        else if (((1 << collision.gameObject.layer) & nonPushableLayer) != 0)
+        else if (((1 << collision.gameObject.layer) & nonPushableLayer1) != 0 || ((1 << collision.gameObject.layer) & nonPushableLayer2) != 0)
         {
             rb.isKinematic = true; // 밀 수 없는 레이어와 접촉 시 박스를 고정시킴
         }

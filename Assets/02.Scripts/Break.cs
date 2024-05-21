@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakablePlatform : MonoBehaviour
+public class Break : MonoBehaviour
 {
     public int landLimit = 5; // 부서지기 전에 필요한 착지 횟수
     private int landCount = 0; // 플레이어의 착지 횟수
