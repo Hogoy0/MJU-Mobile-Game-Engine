@@ -14,7 +14,7 @@ public class RedBox : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.isKinematic = false; // 초기 상태에서 박스가 중력의 영향을 받도록 설정
+        rb.isKinematic = false; // 초기 상태에서 박스가 중력의 영향을 받음
     }
 
     void FixedUpdate()
@@ -43,7 +43,7 @@ public class RedBox : MonoBehaviour
         }
         else if (((1 << collision.gameObject.layer) & nonPushableLayer1) != 0 || ((1 << collision.gameObject.layer) & nonPushableLayer2) != 0)
         {
-            rb.isKinematic = true; // 밀 수 없는 레이어와 접촉 시 박스를 고정시킴
+            rb.isKinematic = true; // 밀 수 없는 레이어와 접촉 시 박스를 고정
         }
     }
 
@@ -59,7 +59,6 @@ public class RedBox : MonoBehaviour
 
     Vector2 GetPushDirection(Collider2D character)
     {
-        // 간단한 입력 처리, 실제로는 더 복잡한 논리를 사용할 수 있습니다.
         float horizontal = Input.GetAxis("Horizontal");
         return new Vector2(horizontal, 0).normalized; // 수평 방향만 반환
     }
