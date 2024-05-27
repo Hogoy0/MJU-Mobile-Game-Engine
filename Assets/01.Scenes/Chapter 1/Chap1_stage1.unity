@@ -264,17 +264,17 @@ CompositeCollider2D:
       - X: 180000000
         Y: 0
     - - X: 100000000
-        Y: -3899999
+        Y: -13900000
       - X: 100000000
-        Y: 0
+        Y: -10000000
       - X: 80000000
-        Y: 0
+        Y: -10000000
       - X: 80000000
-        Y: -3899999
+        Y: -13900000
       - X: 80400000
-        Y: -10000000
+        Y: -20000000
       - X: 99600000
-        Y: -10000000
+        Y: -20000000
     - - X: 180000000
         Y: -30000000
       - X: 40000000
@@ -327,12 +327,12 @@ CompositeCollider2D:
       - {x: 12, y: 0.99997073}
       - {x: 12, y: 0.61}
       - {x: 12.040028, y: 0}
-    - - {x: 9.959973, y: -1}
-      - {x: 10, y: -0.3899982}
-      - {x: 9.99997, y: 0}
-      - {x: 8, y: -0.000029300001}
-      - {x: 8, y: -0.3899999}
-      - {x: 8.040028, y: -1}
+    - - {x: 9.959973, y: -2}
+      - {x: 10, y: -1.3899983}
+      - {x: 9.99997, y: -1}
+      - {x: 8, y: -1.0000293}
+      - {x: 8, y: -1.39}
+      - {x: 8.040028, y: -2}
     - - {x: 17.999971, y: -9}
       - {x: 17.999971, y: -3}
       - {x: 4, y: -3.0000293}
@@ -2218,7 +2218,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 8, y: -1, z: 0}
+  - first: {x: 8, y: -2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -2228,7 +2228,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 9, y: -1, z: 0}
+  - first: {x: 9, y: -2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -2642,7 +2642,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5724161488362011074, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_Name
-      value: drop_1
+      value: Drop_1
       objectReference: {fileID: 0}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2783,7 +2783,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5724161488362011074, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_Name
-      value: drop_1
+      value: Drop_1
       objectReference: {fileID: 0}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2840,7 +2840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 410710505652057535, guid: 3327200add1ff57468ce0635f2455932, type: 3}
       propertyPath: m_Name
-      value: drop_2
+      value: Drop_2
       objectReference: {fileID: 0}
     - target: {fileID: 1996777368027192712, guid: 3327200add1ff57468ce0635f2455932, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2896,6 +2896,9 @@ SceneRoots:
   - {fileID: 1207975691}
   - {fileID: 1715582987}
   - {fileID: 6035401023813389012}
-  - {fileID: 6833365999491123715}
   - {fileID: 1550966943}
+<<<<<<< HEAD
   - {fileID: 813053997}
+=======
+  - {fileID: 6833365999491123715}
+>>>>>>> origin/murge
