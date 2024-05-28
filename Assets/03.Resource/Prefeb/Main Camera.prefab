@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &9092694884417133890
+=======
+--- !u!1 &6689454923756154141
+>>>>>>> murge
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +12,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 5837326556200075566}
   - component: {fileID: 5692660263445719862}
   - component: {fileID: 9089640435369334474}
   - component: {fileID: 7699428002527668943}
+=======
+  - component: {fileID: 5038731247004641493}
+  - component: {fileID: 91693627763988014}
+  - component: {fileID: 8327570518815518244}
+  - component: {fileID: 6304987564391208815}
+>>>>>>> murge
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19,13 +30,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &5837326556200075566
+=======
+--- !u!4 &5038731247004641493
+>>>>>>> murge
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 9092694884417133890}
+=======
+  m_GameObject: {fileID: 6689454923756154141}
+>>>>>>> murge
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -34,13 +53,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!20 &5692660263445719862
+=======
+--- !u!20 &91693627763988014
+>>>>>>> murge
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 9092694884417133890}
+=======
+  m_GameObject: {fileID: 6689454923756154141}
+>>>>>>> murge
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -85,21 +112,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< HEAD
 --- !u!81 &9089640435369334474
+=======
+--- !u!81 &8327570518815518244
+>>>>>>> murge
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 9092694884417133890}
   m_Enabled: 1
 --- !u!114 &7699428002527668943
+=======
+  m_GameObject: {fileID: 6689454923756154141}
+  m_Enabled: 1
+--- !u!114 &6304987564391208815
+>>>>>>> murge
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 9092694884417133890}
+=======
+  m_GameObject: {fileID: 6689454923756154141}
+>>>>>>> murge
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ca08657e95d1414db93f03efb1b7c86, type: 3}
