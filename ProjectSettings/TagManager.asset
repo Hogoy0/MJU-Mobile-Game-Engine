@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+<<<<<<< HEAD
   - Clear
+=======
+  - Break
+>>>>>>> origin/murge
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - Selected Slime
   - Slime
-  - 
-  - 
-  - 
+  - Green
+  - Red
+  - Yellow
   - 
   - 
   - 

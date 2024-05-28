@@ -2430,7 +2430,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+<<<<<<< HEAD
 --- !u!1001 &909628105
+=======
+--- !u!1001 &813053997
+>>>>>>> origin/murge
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2487,6 +2491,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a698cf4ed38a34b9adc721f6c34a00, type: 3}
+<<<<<<< HEAD
 --- !u!1 &947030730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2635,74 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+--- !u!1 &848409768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3792896090910523689, guid: 92a698cf4ed38a34b9adc721f6c34a00, type: 3}
+  m_PrefabInstance: {fileID: 813053997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &995622137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038731247004641493, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304987564391208815, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 848409768}
+    - target: {fileID: 6689454923756154141, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1c47bc1ca4feea4d9728dc1a7b7054d, type: 3}
+>>>>>>> origin/murge
 --- !u!1 &1207975689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,6 +2928,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1750421484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +3037,8 @@ MonoBehaviour:
   target: {fileID: 0}
   manager: {fileID: 185542600}
   speed: 0
+=======
+>>>>>>> origin/murge
 --- !u!1001 &6035401023813389012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3081,12 +3157,19 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1750421487}
+  - {fileID: 995622137}
   - {fileID: 447773647}
   - {fileID: 1207975691}
   - {fileID: 1715582987}
   - {fileID: 6035401023813389012}
   - {fileID: 1550966943}
+<<<<<<< HEAD
+  - {fileID: 813053997}
+=======
   - {fileID: 6833365999491123715}
+<<<<<<< HEAD
   - {fileID: 947030732}
   - {fileID: 909628105}
+=======
+>>>>>>> origin/murge
+>>>>>>> origin/murge
