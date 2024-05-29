@@ -4,54 +4,57 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    public float moveSpeed = 0.5f;
-    private Vector3 initialPosition;
-    private Vector3 movedPosition;
+    private Vector3 initialRotation;
+    private Vector3 movedRotation;
     public bool leverActive = false;
-    public float rayDrawX = 0f;
-    public float rayDrawY = 0f;
+    Rigidbody2D rigidbody = null;
 
     void Start()
     {
-        initialPosition = transform.position;
+        rigidbody= GetComponent<Rigidbody2D>();
+        initialRotation = transform.eulerAngles;
+        // 콜라이더 두개 넣고 하나는 is trigger 체크
     }
     void Update()
     {
-        Debug.DrawRay(new Vector3(this.transform.position.x - 1f, this.transform.position.y + 1f, 0), Vector3.right, new Color(0, 1, 0));
-        //RaycastHit2D Rayhit = Physics2D.Raycast(new Vector3(this.transform.position.x - rayDrawX, this.transform.position.y, 0), this.transform.rotation.eulerAngles, 0.1f, LayerMask.GetMask("Default"));
+        movedRotation = transform.eulerAngles;
+        float interval = Mathf.Abs(initialRotation.z - movedRotation.z);
 
-        // 타일 레이어 바꾸기
-        // 버튼에 콜라이더 두개 넣기
-        // 콜라이더 중 하나는 is trigger 체크
-
-        if (leverActive)
+        if (interval >= 70 && leverActive == false)
         {
-            //transform.Rotate(Vector3.right, 60f * Time.deltaTime);
+            leverActive = true;
+            Debug.Log("레버 활성화");
+        }
+        else if (interval <= 20 && leverActive == true)
+        {
+            leverActive = false;
+            Debug.Log("레버 비활성화");
         }
 
     }
 
-    /*public float targetZRotation = 45f; // 목표 z 회전값
-    public float rotationSpeed = 1f; // 회전 속도
-
-    private Quaternion initialRotation; // 초기 회전값
-    private Quaternion targetRotation; // 목표 회전값
-
-    void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // 초기 회전값 저장
-        initialRotation = transform.rotation;
+        string objectName = other.gameObject.name;
+        int otherLastInt = int.Parse(objectName[objectName.Length - 1].ToString());
+        int myLastInt = int.Parse(this.name[this.name.Length - 1].ToString());
 
-        // 목표 회전값 생성
-        Vector3 targetEulerAngles = initialRotation.eulerAngles;
-        targetEulerAngles.z = targetZRotation;
-        targetRotation = Quaternion.Euler(targetEulerAngles);
+        if (otherLastInt <= myLastInt)
+        {
+            rigidbody.constraints = RigidbodyConstraints2D.None;
+        }
     }
 
-    void Update()
+    void OnTriggerExit2D(Collider2D other)
     {
-        // 회전을 서서히 변경하기 위해 Lerp 사용
-        float t = Mathf.PingPong(Time.time * rotationSpeed, 1f); // 회전 속도에 따른 보간값 계산
-        transform.rotation = Quaternion.Lerp(initialRotation, targetRotation, t);
-    }*/
+        string objectName = other.gameObject.name;
+        int otherLastInt = int.Parse(objectName[objectName.Length - 1].ToString());
+        int myLastInt = int.Parse(this.name[this.name.Length - 1].ToString());
+
+        if (otherLastInt <= myLastInt)
+        {
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
 }
+ 

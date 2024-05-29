@@ -4,37 +4,31 @@ using UnityEngine;
 
 public class ButtonPlatform : MonoBehaviour
 {
-    public float moveSpeed = 0.5f;
+    private float moveSpeed = 0.5f;
     private Vector3 initialPosition;
     public bool buttonActive = false;
-    public float rayDrawX = 0f;
-    public float rayDrawY = 0f;
+
+    [SerializeField]
+    float maxMove = 0;
+
+    [SerializeField]
+    GameObject o_ButtonPlatform;
 
     void Start()
     {
-        initialPosition = transform.position;
+        initialPosition = o_ButtonPlatform.transform.position;
     }
 
     void Update()
     {
-        //Debug.DrawRay(new Vector3(this.transform.position.x - rayDrawX, this.transform.position.y, 0), Vector2.up, new Color(0, 1, 0));
-        //Debug.DrawRay(new Vector3(this.transform.position.x, this.transform.position.y + rayDrawY, 0), Vector2.up, new Color(0, 1, 0));
-        //Debug.DrawRay(new Vector3(this.transform.position.x + rayDrawX, this.transform.position.y, 0), Vector2.up, new Color(0, 1, 0));
-        RaycastHit2D Rayhit1 = Physics2D.Raycast(new Vector3(this.transform.position.x - rayDrawX, this.transform.position.y, 0), Vector2.up, 0.1f, LayerMask.GetMask("Default"));
-        RaycastHit2D Rayhit2 = Physics2D.Raycast(new Vector3(this.transform.position.x, this.transform.position.y + rayDrawY, 0), Vector2.up, 0.1f, LayerMask.GetMask("Default"));
-        RaycastHit2D Rayhit3 = Physics2D.Raycast(new Vector3(this.transform.position.x + rayDrawX, this.transform.position.y, 0), Vector2.up, 0.1f, LayerMask.GetMask("Default"));
 
-        // 타일 레이어 바꾸기
-        // 버튼에 콜라이더 두개 넣기
-        // 콜라이더 중 하나는 is trigger 체크
-
-        if (buttonActive)
+        if (buttonActive && o_ButtonPlatform.transform.position.y >= -maxMove)
         {
-            transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+            ButtonMoveDown();
         }
-        else if (transform.position.y < initialPosition.y && Rayhit1.collider == null && Rayhit2.collider == null && Rayhit3.collider == null)
+        else if (o_ButtonPlatform.transform.position.y < initialPosition.y)
         {
-            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+            ButtonMoveUp();
         }
     }
 
@@ -60,5 +54,15 @@ public class ButtonPlatform : MonoBehaviour
         {
             buttonActive = false;
         }
+    }
+
+    void ButtonMoveDown()
+    {
+        o_ButtonPlatform.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+    }
+
+    void ButtonMoveUp()
+    {
+        o_ButtonPlatform.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
     }
 }
