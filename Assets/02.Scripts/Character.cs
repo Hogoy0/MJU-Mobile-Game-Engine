@@ -167,9 +167,9 @@ public class Character : MonoBehaviour
        
         if (rigid.velocity.y < 0)
         {
-            Debug.DrawRay(transform.position, Vector2.down * 0.6f, Color.blue);
+            Debug.DrawRay(transform.position, Vector2.down * 0.8f, Color.blue);
             RaycastHit2D LandingCheck;
-            LandingCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, LayerMask.GetMask("Tile"));
+            LandingCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, LayerMask.GetMask("Tile"));
 
             if (LandingCheck.collider != null)
             {

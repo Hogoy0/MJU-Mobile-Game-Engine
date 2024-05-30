@@ -21,10 +21,11 @@ public class Manager : MonoBehaviour
     Vector3 offset = new Vector3(1f, 0f, 0f);
     void Start()
     {
-        spawn();
+       // spawn();
         select1();
-        slimelist[0].GetComponent<Character>().SlimeSize = 3;
         UICharacterController = slimelist[0].GetComponent<Character>();
+        SelectedSlimeSize = slimelist[0].GetComponent<Character>().SlimeSize;
+
 
     }
 

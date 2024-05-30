@@ -7,6 +7,20 @@ public class wind : MonoBehaviour
     public Vector2 windDirection = Vector2.left; // 바람의 방향 
     public float windStrength = 10f; // 바람의 세기 
 
+
+
+
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
+    }
+
     private void FixedUpdate()
     {
         ApplyWindForce();

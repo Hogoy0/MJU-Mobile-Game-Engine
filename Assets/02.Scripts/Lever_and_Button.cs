@@ -64,7 +64,10 @@ public class Lever_and_Button : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        string objectName = other.gameObject.name;
+        string objectName = other.gameObject.name.Replace("(Clone)", "").Trim();
+
+
+
         int otherLastInt = int.Parse(objectName[objectName.Length - 1].ToString());
         int myLastInt = int.Parse(this.name[this.name.Length - 1].ToString());
 
@@ -83,7 +86,7 @@ public class Lever_and_Button : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        string objectName = other.gameObject.name;
+        string objectName = other.gameObject.name.Replace("(Clone)", "").Trim();
         int otherLastInt = int.Parse(objectName[objectName.Length - 1].ToString());
         int myLastInt = int.Parse(this.name[this.name.Length - 1].ToString());
 
