@@ -1,0 +1,8 @@
+cameraMoving = 캐릭터추적
+fallingtrap = 위에서 떨어지는 함정
+GasiTrap = 투명한 가시함정
+MovingFlatform = 움직이는 발판
+PitTrap = 가라앉는 함정
+Playercontroller = 이동 점프 분열(?) 종합선물세트
+pushbox = 박스 움직이기
+sarazida = 갑자기 사라지는 발판
