@@ -4,5 +4,65 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/01.Scenes/LobbyScene.unity
+    guid: b21664d19e0571947bfd489d7f208bb2
+  - enabled: 1
+    path: Assets/01.Scenes/ChapterSelectScene.unity
+    guid: c904d70beff8a0744b2b5554c9e22503
+  - enabled: 1
+    path: Assets/01.Scenes/Chap1Scene.unity
+    guid: fd03cf1d607641f46b79efaf8cf9e93c
+  - enabled: 1
+    path: Assets/01.Scenes/Chap2Scene.unity
+    guid: e92f9d7c485a5144a87f4122cdda7c21
+  - enabled: 1
+    path: Assets/01.Scenes/Chap3Scene.unity
+    guid: 967fb1f78f772c1478349a0c9bb9c917
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 1/Chap1_stage1.unity
+    guid: 9cc261986ae756c449717f09b63cd99e
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 1/Chap1_stage2.unity
+    guid: 7dce8f388fe54f048b06b66f1814f9b9
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 1/Chap1_stage3.unity
+    guid: d6d65051f7d30934a855d5446b410cd9
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 1/Chap1_stage4.unity
+    guid: 78c9ca9bff579a64fa7f26a7653ed90d
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 1/Chap1_stage5.unity
+    guid: 674628aeea8d76349bc2e936219b3159
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 2/Chap2_stage1.unity
+    guid: d53e767b822d79640985719233a890e0
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 2/Chap2_stage2.unity
+    guid: d4f35750a33741944bbef8f3e15af498
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 2/Chap2_stage3.unity
+    guid: de981b2ec0eecf744998c0b6d189d80a
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 2/Chap2_stage4.unity
+    guid: 4e39f3a7b8e6f904cbcd71eb73cf4697
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 2/Chap2_stage5.unity
+    guid: 5ed462b56321f95469e58afd7bca55d5
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 3/Chap3_stage1.unity
+    guid: 9e4c2efa6933caa42885d756a93b13e2
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 3/Chap3_stage2.unity
+    guid: 40203158e5ab1ac4c9a8c6d7a5435962
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 3/Chap3_stage3.unity
+    guid: 16f03670a2cc63a49b0a36fa77fa51c8
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 3/Chap3_stage4.unity
+    guid: ced827839cc402f44b9131477f2cac26
+  - enabled: 1
+    path: Assets/01.Scenes/Chapter 3/Chap3_stage5.unity
+    guid: 3532507bba10c354b98138b039df3484
   m_configObjects: {}
