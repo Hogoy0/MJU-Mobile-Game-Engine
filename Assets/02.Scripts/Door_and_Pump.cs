@@ -7,11 +7,13 @@ public class Door_and_Pump : MonoBehaviour
     [SerializeField]
     GameObject o_trigger;
     Lever_and_Button Trigger;
+
     [SerializeField]
     private float moveSpeed = 1f;
     [SerializeField]
     float maxMove = 0;
     private Vector3 initialPosition;
+
 
     // 움직임 방향 정의
     public enum MoveDirection

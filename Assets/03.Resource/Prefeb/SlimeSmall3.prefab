@@ -173,6 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   Selected: 0
+  MoveLeft: 0
+  MoveRight: 0
+  isJump: 0
   SlimeRaycast: 0
+  boxCastSize: {x: 0.5, y: 5}
+  boxCastDistance: 0.1
   ListNumber: 10
   SlimeSize: 0
