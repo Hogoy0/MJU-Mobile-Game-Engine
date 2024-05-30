@@ -109,6 +109,20 @@ public class Character : MonoBehaviour
 
     public void UIJump()
     {
+        if (isJump == true)
+        {
+            Debug.DrawRay(transform.position, Vector2.down * 0.6f, Color.blue);
+            RaycastHit2D LandingCheck;
+            LandingCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, LayerMask.GetMask("Tile"));
+
+            if (LandingCheck.collider != null)
+            {
+                isJump = false;
+                Debug.Log("isJump ¼öÁ¤");
+            }
+
+        }
+
         if (isJump == false)
         {
             rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
