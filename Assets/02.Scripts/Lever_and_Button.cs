@@ -6,12 +6,12 @@ public class Lever_and_Button : MonoBehaviour
 {
     public bool Active = false;
 
-    //·¹¹ö
+    //ï¿½ï¿½ï¿½ï¿½
     private Vector3 initialRotation;
     private Vector3 movedRotation;
     Rigidbody2D rigidbody = null;
 
-    //¹öÆ°
+    //ï¿½ï¿½Æ°
     private Vector3 initialPosition;
     [SerializeField]
     float maxMove = 0;
@@ -25,7 +25,7 @@ public class Lever_and_Button : MonoBehaviour
         {
             rigidbody = GetComponent<Rigidbody2D>();
             initialRotation = transform.eulerAngles;
-            // ÄÝ¶óÀÌ´õ µÎ°³ ³Ö°í ÇÏ³ª´Â is trigger Ã¼Å©
+            // ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½Î°ï¿½ ï¿½Ö°ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ is trigger Ã¼Å©
         }
         else if (gameObject.name.StartsWith("B"))
         {
@@ -64,7 +64,7 @@ public class Lever_and_Button : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        string objectName = other.gameObject.name;
+        string objectName = other.gameObject.name.Replace("(Clone)","").Trim();
         int otherLastInt = int.Parse(objectName[objectName.Length - 1].ToString());
         int myLastInt = int.Parse(this.name[this.name.Length - 1].ToString());
 
@@ -83,7 +83,7 @@ public class Lever_and_Button : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        string objectName = other.gameObject.name;
+        string objectName = other.gameObject.name.Replace("(Clone)","").Trim();
         int otherLastInt = int.Parse(objectName[objectName.Length - 1].ToString());
         int myLastInt = int.Parse(this.name[this.name.Length - 1].ToString());
 

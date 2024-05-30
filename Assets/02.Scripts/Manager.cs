@@ -21,9 +21,9 @@ public class Manager : MonoBehaviour
     Vector3 offset = new Vector3(1f, 0f, 0f);
     void Start()
     {
-        spawn();
+        
         select1();
-        slimelist[0].GetComponent<Character>().SlimeSize = 3;
+        SelectedSlimeSize = slimelist[0].GetComponent<Character>().SlimeSize;
         UICharacterController = slimelist[0].GetComponent<Character>();
 
     }
@@ -93,13 +93,13 @@ public class Manager : MonoBehaviour
     {
         if (counting < 4)
         {
-            // »õ·Î¿î °ÔÀÓ ¿ÀºêÁ§Æ® »ý¼º À§Ä¡ °è»ê
+            // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½
             Vector3 spawnPosition = new Vector3(spawnX, 0f, 0f);
 
-            // »õ·Î¿î °ÔÀÓ ¿ÀºêÁ§Æ® »ý¼º
+            // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             slimelist[counting] = Instantiate(SlimePrefebList[0], spawnPosition, Quaternion.identity);
 
-            // x ÁÂÇ¥ Áõ°¡
+            // x ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½
             spawnX += 4f;
             counting += 1;
         }
@@ -154,7 +154,7 @@ public class Manager : MonoBehaviour
     {
         int originalIndex = selectedIndex;
 
-        // ´ÙÀ½ ÀÎµ¦½º¸¦ Ã£À½
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
         do
         {
             selectedIndex = (selectedIndex + 1) % slimelist.Length;
@@ -162,7 +162,7 @@ public class Manager : MonoBehaviour
         }
         while (slimelist[selectedIndex] == null && selectedIndex != originalIndex);
 
-        // ´ÙÀ½ Ä³¸¯ÅÍ ¼±ÅÃ
+        // ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (slimelist[selectedIndex] != null)
         {
             SelectCharacter(selectedIndex);
@@ -247,7 +247,7 @@ public class Manager : MonoBehaviour
         }
     }
 
-    void setseletion() //i¹øÂ° slimelist°¡ NullÀÎÁö ¸ÕÀú È®ÀÎÇÏ°í, ¾Æ´Ï¶ó¸é i¿Í playerinput°ú ºñ±³ÇØ °°À¸¸é Selected¿¡ true ´ëÀÔ.
+    void setseletion() //iï¿½ï¿½Â° slimelistï¿½ï¿½ Nullï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½Æ´Ï¶ï¿½ï¿½ iï¿½ï¿½ playerinputï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Selectedï¿½ï¿½ true ï¿½ï¿½ï¿½ï¿½.
     {
         for (int i = 0; i < 4; i++)
         {
@@ -268,13 +268,13 @@ public class Manager : MonoBehaviour
     }
     void Split()
     {
-        splitcounting += 1; //ºÐ¿­ÇÒ ¶§ ¸¶´Ù 1¾¿ ´õÇÏ±â
-        pos = slimelist[playerinput].transform.position; //ÇöÀç ¼±ÅÃÇÑ ½½¶óÀÓÀÇ À§Ä¡ ÀúÀå
+        splitcounting += 1; //ï¿½Ð¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        pos = slimelist[playerinput].transform.position; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
 
-        if (slimelist[playerinput] != null) //¸¸¾à ¼±ÅÃÇÑ ¹øÈ£ÀÇ ½½¶óÀÓ ¸®½ºÆ®°¡ ºñ¾îÀÖÁö ¾Ê´Ù¸é
+        if (slimelist[playerinput] != null) //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½
         {
-            Destroy(slimelist[playerinput]); //ÇöÀç °í¸¥ ½½¶óÀÓ ÆÄ±«
-            slimelist[playerinput] = null; //±×¸®°í ÆÄ±«ÇÑ ½½¶óÀÓÀÌ ÀÖ´ø ÇÁ¸®Æé ÆÄ±«
+            Destroy(slimelist[playerinput]); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
+            slimelist[playerinput] = null; //ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
         }
 
         if (SelectedSlimeSize == 3)
@@ -293,13 +293,13 @@ public class Manager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            if (slimelist[i] == null) // ½½¶óÀÓ¸®½ºÆ® ¹è¿­À» 0ºÎÅÍ3±îÁö µ¹¸é¼­, ¸¸¾à ºñ¾îÀÖ´Â ¹è¿­À» Ã£À¸¸é
+            if (slimelist[i] == null) // ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ® ï¿½è¿­ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½è¿­ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½
             {
-                slimelist[i] = Instantiate(CreationSlime, pos - offset, Quaternion.identity);  //ºÐ¿­ÇÏ±â Àü ½½¶óÀÓÀÇ ¿ÞÂÊ xÁÂÇ¥ - 1¿¡ ½½¶óÀÓ »ý¼º
-                slimelist[i].GetComponent<Character>().ListNumber = i; //ºÐ¿­ÇÑ ½½¶óÀÓÀÌ ½½¶óÀÓ¸®½ºÆ®ÀÇ ¸î¹øÂ° ¹è¿­ÀÌ µé¾î°¬´ÂÁö ½½¶óÀÓ ÇÁ¸®Æé ½ºÅ©¸³Æ®¿¡ ÀúÀåÇØ³õÀ½
+                slimelist[i] = Instantiate(CreationSlime, pos - offset, Quaternion.identity);  //ï¿½Ð¿ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ xï¿½ï¿½Ç¥ - 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                slimelist[i].GetComponent<Character>().ListNumber = i; //ï¿½Ð¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Â° ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½î°¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
                 slimelist[i].GetComponent<Character>().SlimeSize = SelectedSlimeSize - 1;
                 AutoSelection(i);
-                break;                                                 //for¹® Å»Ãâ
+                break;                                                 //forï¿½ï¿½ Å»ï¿½ï¿½
             }
         }
         for (int i = 0; i < 4; i++)
@@ -345,32 +345,32 @@ public class Manager : MonoBehaviour
     {
         if (slimelist[playerinput].GetComponent<Character>().rayhit.collider != null)   
         {
-            Debug.Log("ÇÕÃ¼!!");
-            GameObject WillMurgeSlime = slimelist[playerinput].GetComponent<Character>().rayhit.collider.gameObject; // ºÎµúÈù ¿ÀºêÁ§Æ®ÀÇ Á¤º¸¸¦ ¹Þ¾Æ¿È
+            Debug.Log("ï¿½ï¿½Ã¼!!");
+            GameObject WillMurgeSlime = slimelist[playerinput].GetComponent<Character>().rayhit.collider.gameObject; // ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
             if (SelectedSlimeSize == WillMurgeSlime.GetComponent<Character>().SlimeSize)
             {
                 Debug.Log(WillMurgeSlime.GetComponent<Character>().SlimeSize);
-                pos = WillMurgeSlime.transform.position + slimelist[playerinput].transform.position; // Á¶Á¾ÇÏ´Â ½½¶óÀÓ°ú ºÎµúÈù ½½¶óÀÓ Áß°£ °Å¸®¸¦ °è»êÇØ¼­ MiddlePos¿¡ Áý¾î³ÖÀ½
+                pos = WillMurgeSlime.transform.position + slimelist[playerinput].transform.position; // ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ MiddlePosï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 pos = pos / 2;
                 Debug.Log(pos);                                                                                   
-                int WillDesNum1 = slimelist[playerinput].GetComponent<Character>().ListNumber;          //ÇÃ·¹ÀÌ¾î°¡ Á¶Á¾ÇÏ°í ÀÖ´Â ½½¶óÀÓÀÌ ½½¶óÀÓ¸®½ºÆ®ÀÇ ¸î¹øÂ° ¹è¿­¿¡ µé¾î°¡ ÀÖ´ÂÁö Á¤º¸¸¦ ÀúÀå
-                int WillDesNum2 = WillMurgeSlime.GetComponent<Character>().ListNumber;                  //ÇÃ·¹ÀÌ¾î°¡ Á¶Á¾ÇÏ°í ÀÖ´Â ½½¶óÀÓ°ú ºÎµúÈù ½½¶óÀÓÀÌ ½½¶óÀÓ¸®½ºÆ®ÀÇ ¸î¹øÂ° ¹è¿­¿¡ µé¾î°¡ ÀÖ´ÂÁö Á¤º¸¸¦ ÀúÀå
-                Destroy(slimelist[playerinput].GetComponent<Character>().rayhit.collider.gameObject);   //Á¶Á¾ÇÏ´Â ½½¶óÀÓ°ú ºÎµúÈù ½½¶óÀÓ ÆÄ±«
-                slimelist[WillDesNum2] = null;                                                          //¹æ±Ý ÆÄ±«ÇÑ ½½¶óÀÓÀÌ µé¾î°¡ ÀÖ¾ú´ø ½½¶óÀÓ¸®½ºÆ®ÀÇ ¹è¿­À» null·Î ÃÊ±âÈ­
-                Destroy(slimelist[playerinput]);                                                        //Á¶Á¾ÇÏ°í ÀÖ´Â ½½¶óÀÓ ÆÄ±«
-                slimelist[WillDesNum1] = null;                                                          //Á¶Á¾ÇÏ°í ÀÖ´ø ½½¶óÀÓÀÌ µé¾î°¡ ÀÖ¾ú´ø ½½¶óÀÓ¸®½ºÆ®ÀÇ ¹è¿­À» null·Î ÃÊ±âÈ­
-                Debug.Log("ÇÕÄ¡±â Àü selectedslimesize°ª");
+                int WillDesNum1 = slimelist[playerinput].GetComponent<Character>().ListNumber;          //ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Â° ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½î°¡ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                int WillDesNum2 = WillMurgeSlime.GetComponent<Character>().ListNumber;                  //ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Â° ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½î°¡ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                Destroy(slimelist[playerinput].GetComponent<Character>().rayhit.collider.gameObject);   //ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
+                slimelist[WillDesNum2] = null;                                                          //ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ nullï¿½ï¿½ ï¿½Ê±ï¿½È­
+                Destroy(slimelist[playerinput]);                                                        //ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
+                slimelist[WillDesNum1] = null;                                                          //ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ nullï¿½ï¿½ ï¿½Ê±ï¿½È­
+                Debug.Log("ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ selectedslimesizeï¿½ï¿½");
                 Debug.Log(SelectedSlimeSize);
                 if (SelectedSlimeSize == 1)
                 {
                     MurgeSlimeCreate(SlimePrefebList[1]);
-                    Debug.Log("Á¦ÀÏ ÀÛÀº ½½¶óÀÓ ÇÕÃÄÁü");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                     Debug.Log(SelectedSlimeSize);
                 }
                 if (SelectedSlimeSize == 2)
                 {
                     MurgeSlimeCreate(SlimePrefebList[0]);
-                    Debug.Log("Áß°£ ½½¶óÀÓ ÇÕÃÄÁü");
+                    Debug.Log("ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                     Debug.Log(SelectedSlimeSize);
                 }
 
@@ -378,7 +378,7 @@ public class Manager : MonoBehaviour
 
 
             splitcounting -= 1;
-            pos = Vector3.zero; // º¯¼öµé ÃÊ±âÈ­
+            pos = Vector3.zero; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         }
     }
     
@@ -388,8 +388,8 @@ public class Manager : MonoBehaviour
         {
             if (slimelist[i] == null)
             {
-                slimelist[i] = Instantiate(CreationSlime, pos, Quaternion.identity);             //½½¶óÀÓ¸®½ºÆ®¸¦ 0ºÎÅÍ 3±îÁö µ¹¸é¼­ nullÀÎ ¹è¿­ÀÌ ÀÖÀ¸¸é ±× ¹è¿­¿¡ MiddlePos ÁÂÇ¥·Î »õ ½½¶óÀÓ »ý¼ºÇÏ°í
-                slimelist[i].GetComponent<Character>().ListNumber = i;                         //±× ½½¶óÀÓÀÌ ½½¶óÀÓ¸®½ºÆ®ÀÇ ¸î¹øÂ° ¹è¿­¿¡ µé¾î°¬´ÂÁö ÀúÀå
+                slimelist[i] = Instantiate(CreationSlime, pos, Quaternion.identity);             //ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­ nullï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ MiddlePos ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½
+                slimelist[i].GetComponent<Character>().ListNumber = i;                         //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Â° ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½î°¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 slimelist[i].GetComponent<Character>().SlimeSize = SelectedSlimeSize + 1;
                 AutoSelection(i);
                 break;
