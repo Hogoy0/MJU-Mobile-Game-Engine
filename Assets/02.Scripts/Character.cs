@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,11 +11,13 @@ public class Character : MonoBehaviour
     public bool MoveLeft = false;
     public bool MoveRight = false;
     float JumpPower = 7;
-    bool isJump = false;
+    public bool isJump = false;
     Vector2 playerDir;
     Vector3 Rayposition = new Vector3 (2, 0, 0);
     public bool SlimeRaycast = false;
     public RaycastHit2D rayhit;
+    public Vector2 boxCastSize = new Vector2(0.5f, 5f);
+    public float boxCastDistance = 0.1f;
     public int ListNumber = 10;
     public int SlimeSize = 0;
     Rigidbody2D rigid;
@@ -62,7 +65,7 @@ public class Character : MonoBehaviour
                 Debug.Log("감지되는중");
             }
         }
-
+        CheckLanding();
     }
 
 
@@ -99,8 +102,8 @@ public class Character : MonoBehaviour
             if (isJump == false)
             {
                 rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+                isJump = true;
             }
-            isJump = true;
         }
     }
 
@@ -109,8 +112,9 @@ public class Character : MonoBehaviour
         if (isJump == false)
         {
             rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+            isJump = true;
         }
-        isJump = true;
+        
     }
 
     public void UILeftMove()
@@ -131,11 +135,12 @@ public class Character : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform")) 
+       /* if (collision.gameObject.CompareTag("Platform")) 
         {
             Debug.Log("플랫폼과 충돌!");
             isJump = false;
         }
+       */
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("슬라임과 충돌!");
@@ -143,6 +148,46 @@ public class Character : MonoBehaviour
         }
     }
 
+    private void CheckLanding()
+    {
+       
+        if (rigid.velocity.y < 0)
+        {
+            Debug.DrawRay(transform.position, Vector2.down * 0.6f, Color.blue);
+            RaycastHit2D LandingCheck;
+            LandingCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, LayerMask.GetMask("Tile"));
 
+            if (LandingCheck.collider != null)
+            {
+                if (LandingCheck.distance < 0.5f)
+                {
+                    isJump = false;
+                    Debug.Log("바닥 착지");
+                }
+            }
+           
+
+        }
+    }
+
+    void CheckJumpStatus()
+    {
+        // 박스캐스트의 시작 위치와 방향을 설정합니다.
+        Vector2 origin = transform.position;
+        Vector2 direction = Vector2.down;
+
+        // 박스캐스트를 수행합니다.
+        RaycastHit2D hit = Physics2D.BoxCast(origin, boxCastSize, 0, direction, boxCastDistance, LayerMask.GetMask("Tile"));
+        if (hit.collider != null)
+        {
+            // 박스캐스트가 바닥에 닿았다면 착지 상태
+            isJump = false;
+        }
+
+        // 디버그 박스 그리기 (필요 시)
+        Debug.DrawRay(origin, direction * boxCastDistance, Color.red);
+        Debug.DrawLine(origin - new Vector2(boxCastSize.x / 2, 0), origin + new Vector2(boxCastSize.x / 2, 0), Color.blue);
+        Debug.DrawLine(origin - new Vector2(0, boxCastSize.y / 2), origin + new Vector2(0, boxCastSize.y / 2), Color.blue);
+    }
 
 }
