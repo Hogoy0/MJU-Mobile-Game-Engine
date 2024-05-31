@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 566671968, guid: f57e57a4a2ba01b40b71b22031735fb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,6 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   Selected: 0
+  MoveLeft: 0
+  MoveRight: 0
+  isJump: 0
   SlimeRaycast: 0
+  boxCastSize: {x: 0.5, y: 5}
+  boxCastDistance: 0.1
   ListNumber: 10
   SlimeSize: 0
