@@ -21,12 +21,15 @@ public class Character : MonoBehaviour
     public int ListNumber = 10;
     public int SlimeSize = 0;
     Rigidbody2D rigid;
-    SpriteRenderer spriterenderer; 
+    SpriteRenderer spriterenderer;
+    AudioSource JumpSound;
+
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();        
         spriterenderer = GetComponent<SpriteRenderer>();
+        JumpSound = GetComponent<AudioSource>();
     }
     void Start()
     {        
@@ -102,6 +105,8 @@ public class Character : MonoBehaviour
             if (isJump == false)
             {
                 rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+                JumpSound.Play();
+
                 isJump = true;
             }
         }
@@ -126,6 +131,7 @@ public class Character : MonoBehaviour
         if (isJump == false)
         {
             rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+            JumpSound.Play();
             isJump = true;
         }
         
