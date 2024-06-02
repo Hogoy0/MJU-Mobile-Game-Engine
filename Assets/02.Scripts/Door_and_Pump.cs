@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Door_and_Pump : MonoBehaviour
 {
@@ -37,50 +38,58 @@ public class Door_and_Pump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 position = transform.position;
         if (moveDirection == MoveDirection.Left)
         {
             if (Trigger.Active && transform.position.x > initialPosition.x - maxMove)
             {
-                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+                position.x -= moveSpeed * Time.deltaTime;
             }
             else if (transform.position.x < initialPosition.x)
             {
-                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime * -1);
+                //transform.Translate(Vector3.left * moveSpeed * Time.deltaTime * -1);
+                position.x += moveSpeed * Time.deltaTime;
             }
         }
         else if (moveDirection == MoveDirection.Right)
         {
             if (Trigger.Active && transform.position.x < initialPosition.x + maxMove)
             {
-                transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+                //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+                position.x += moveSpeed * Time.deltaTime;
             }
             else if (transform.position.x > initialPosition.x)
             {
-                transform.Translate(Vector3.right * moveSpeed * Time.deltaTime * -1);
+                //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime * -1);
+                position.x -= moveSpeed * Time.deltaTime;
             }
         }
         else if (moveDirection == MoveDirection.Down)
         {
             if (Trigger.Active && transform.position.y > initialPosition.y - maxMove)
             {
-                transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+                //transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+                position.y -= moveSpeed * Time.deltaTime;
             }
             else if (transform.position.y < initialPosition.y)
             {
-                transform.Translate(Vector3.down * moveSpeed * Time.deltaTime * -1);
+                //transform.Translate(Vector3.down * moveSpeed * Time.deltaTime * -1);
+                position.y += moveSpeed * Time.deltaTime;
             }
         }
         else if (moveDirection == MoveDirection.Up)
         {
             if (Trigger.Active && transform.position.y < initialPosition.y + maxMove)
             {
-                transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+                //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+                position.y += moveSpeed * Time.deltaTime;
             }
             else if (transform.position.y > initialPosition.y)
             {
-                transform.Translate(Vector3.up * moveSpeed * Time.deltaTime * -1);
+                //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime * -1);
+                position.y -= moveSpeed * Time.deltaTime;
             }
         }
-
+        transform.position = position;
     }
 }
