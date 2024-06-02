@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3821935372796744498}
   - component: {fileID: 4247136075856601849}
   - component: {fileID: 7243947594106105910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lever_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
