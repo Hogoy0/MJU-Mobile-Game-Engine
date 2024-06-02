@@ -216,6 +216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 3824028032486489064, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+      propertyPath: slimelist.Array.data[0]
+      value: 
+      objectReference: {fileID: 1513412662}
     - target: {fileID: 4907324254679266315, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
       propertyPath: target
       value: 
@@ -324,7 +328,7 @@ GameObject:
   - component: {fileID: 775165668}
   - component: {fileID: 775165667}
   - component: {fileID: 775165666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -2732,6 +2736,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1513412661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330118313864553918, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398307693062922184, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: SlimeSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398307693062922184, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: ListNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092068625561939683, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+      propertyPath: m_Name
+      value: SlimeLarge1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+--- !u!1 &1513412662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6092068625561939683, guid: a003cefb2712ed94a8719e3b39d55da7, type: 3}
+  m_PrefabInstance: {fileID: 1513412661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1550966943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2891,7 +2965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.98
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3000,3 +3074,4 @@ SceneRoots:
   - {fileID: 6833365999491123715}
   - {fileID: 158411463}
   - {fileID: 942581661}
+  - {fileID: 1513412661}

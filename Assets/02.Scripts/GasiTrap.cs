@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GasiTrap : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GasiTrap : MonoBehaviour
         {
             SetTransparency(false); // 캐릭터와 충돌 시 다시 원래대로 돌아오게 설정
             Debug.Log("크크루삥뽕"); // 충돌 발생 메시지!!
+
+            // 플레이어가 가시 함정에 닿으면 씬 재시작
+            RestartScene();
         }
     }
 
@@ -44,5 +48,13 @@ public class GasiTrap : MonoBehaviour
         }
 
         isTransparent = transparent;
+    }
+
+    void RestartScene()
+    {
+        // 현재 씬을 다시 로드
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 타임 스케일을 1로 설정하여 게임이 정상 속도로 진행되도록 함
+        Time.timeScale = 1f;
     }
 }
