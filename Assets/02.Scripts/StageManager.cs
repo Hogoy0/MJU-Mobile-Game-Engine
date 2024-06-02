@@ -16,7 +16,7 @@ public class StageManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("Chap2_stage5", 0);
+        PlayerPrefs.SetInt("Chap2_stage5", 1);
 
         CurrentChap = SceneManager.GetActiveScene().name;
         number = Regex.Match(CurrentChap, @"\d+").Value;
@@ -28,8 +28,11 @@ public class StageManager : MonoBehaviour
 
         for (int i = 1; i < 5; i++)
         {
-            int stageNum = i + 1;
+            int stageNum = i;
+            Debug.Log(stageNum);
+            Debug.Log(Key + stageNum);
             int stageClearInfo = PlayerPrefs.GetInt(Key + stageNum, 0);
+            Debug.Log(stageClearInfo);
             if (stageClearInfo == 1)
             {
                 dim[i].SetActive(false);
