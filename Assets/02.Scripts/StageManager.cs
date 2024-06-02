@@ -16,7 +16,7 @@ public class StageManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("Chap2_stage5", 1);
+        PlayerPrefs.SetInt("Chap1_stage5", 1);
 
         CurrentChap = SceneManager.GetActiveScene().name;
         number = Regex.Match(CurrentChap, @"\d+").Value;
