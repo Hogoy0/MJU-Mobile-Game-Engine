@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class poison2 : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class poison2 : MonoBehaviour
         else
         {
             Debug.Log("게임 오버! 플레이어가 아닌 캐릭터가 바닥에 닿았음.");
+            RestartScene();
         }
+    }
+
+    void RestartScene()
+    {
+        // 현재 씬을 다시 로드
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 타임 스케일을 1로 설정하여 게임이 정상 속도로 진행되도록 함
+        Time.timeScale = 1f;
     }
 }
