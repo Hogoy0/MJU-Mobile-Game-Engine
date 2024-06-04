@@ -7,9 +7,11 @@ public class BoxDie : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // 박스에 충돌하면 게임 오버 처리
-        Debug.Log("박스에 충돌했습니다. 게임 오버!");
-        RestartScene();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("박스에 충돌했습니다. 게임 오버!");
+            RestartScene();
+        }
     }
 
     void RestartScene()

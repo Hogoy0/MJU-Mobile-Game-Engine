@@ -220,9 +220,25 @@ PrefabInstance:
       propertyPath: slimelist.Array.data[0]
       value: 
       objectReference: {fileID: 1513412662}
+    - target: {fileID: 3824028032486489064, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+      propertyPath: slimelist.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824028032486489064, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+      propertyPath: slimelist.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4907324254679266315, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987784093754376842, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987784093754376842, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8454392799375919316, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2820,7 +2836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17
+      value: 14.44
       objectReference: {fileID: 0}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.y
