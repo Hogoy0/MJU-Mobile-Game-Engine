@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1101544873786668313}
   - component: {fileID: 7753360423902337987}
   - component: {fileID: 4467980962747175911}
+  - component: {fileID: 3198033821967148677}
   m_Layer: 0
   m_Name: SlimeSmall3
   m_TagString: Player
@@ -181,3 +182,15 @@ MonoBehaviour:
   boxCastDistance: 0.1
   ListNumber: 10
   SlimeSize: 0
+--- !u!114 &3198033821967148677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104752259191348080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fe97854999bca4bbc2b47fef4eb257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
