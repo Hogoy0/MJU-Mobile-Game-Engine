@@ -6,11 +6,8 @@ using UnityEngine.UIElements;
 public class Door_and_Pump : MonoBehaviour
 {
     [SerializeField]
-    GameObject o_trigger1;
-    [SerializeField]
-    GameObject o_trigger2;
-    Lever_and_Button Trigger1;
-    Lever_and_Button Trigger2;
+    GameObject o_trigger;
+    Lever_and_Button Trigger;
 
     [SerializeField]
     private float moveSpeed = 1f;
@@ -18,7 +15,8 @@ public class Door_and_Pump : MonoBehaviour
     float maxMove = 0;
     private Vector3 initialPosition;
 
-    // ë¬¸ì´ ì›€ì§ì´ëŠ” ë°©í–¥ì„ ì„¤ì •í•˜ëŠ” ì—´ê±°í˜•
+
+    // ¿òÁ÷ÀÓ ¹æÇâ Á¤ÀÇ
     public enum MoveDirection
     {
         Right,
@@ -27,59 +25,71 @@ public class Door_and_Pump : MonoBehaviour
         Down
     }
 
-    // ë¬¸ì´ ì›€ì§ì´ëŠ” ë°©í–¥ì„ ì„¤ì •í•˜ëŠ” ì˜µì…˜
+    // ÀÎ½ºÆåÅÍ Ã¢¿¡¼­ ¼±ÅÃÇÒ ¼ö ÀÖ´Â ¿É¼Ç
     [SerializeField]
     private MoveDirection moveDirection;
 
     void Start()
     {
-        if (o_trigger1 != null)
-            Trigger1 = o_trigger1.GetComponent<Lever_and_Button>();
-        if (o_trigger2 != null)
-            Trigger2 = o_trigger2.GetComponent<Lever_and_Button>();
+        Trigger = o_trigger.GetComponent<Lever_and_Button>();
         initialPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Trigger1ê³¼ Trigger2ê°€ nullì´ ì•„ë‹Œì§€ í™•ì¸
-        if ((Trigger1 != null && Trigger1.Active) || (Trigger2 != null && Trigger2.Active))
+        Vector3 position = transform.position;
+        if (moveDirection == MoveDirection.Left)
         {
-            MoveDoor(true); // ë¬¸ì„ ì˜¬ë¦¼
-        }
-        else
-        {
-            MoveDoor(false); // ë¬¸ì„ ë‚´ë¦¼
-        }
-    }
-
-    void MoveDoor(bool moveUp)
-    {
-        Vector3 direction;
-
-        if (moveDirection == MoveDirection.Left || moveDirection == MoveDirection.Right)
-        {
-            direction = (moveDirection == MoveDirection.Left) ? Vector3.left : Vector3.right;
-        }
-        else
-        {
-            direction = (moveDirection == MoveDirection.Up) ? Vector3.up : Vector3.down;
-        }
-
-        if (moveUp)
-        {
-            if (Vector3.Distance(transform.position, initialPosition + (direction * maxMove)) > 0.05f)
+            if (Trigger.Active && transform.position.x > initialPosition.x - maxMove)
             {
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
+                position.x -= moveSpeed * Time.deltaTime;
+            }
+            else if (transform.position.x < initialPosition.x)
+            {
+                //transform.Translate(Vector3.left * moveSpeed * Time.deltaTime * -1);
+                position.x += moveSpeed * Time.deltaTime;
             }
         }
-        else
+        else if (moveDirection == MoveDirection.Right)
         {
-            if (Vector3.Distance(transform.position, initialPosition) > 0.05f)
+            if (Trigger.Active && transform.position.x < initialPosition.x + maxMove)
             {
-                transform.Translate(-direction * moveSpeed * Time.deltaTime);
+                //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+                position.x += moveSpeed * Time.deltaTime;
+            }
+            else if (transform.position.x > initialPosition.x)
+            {
+                //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime * -1);
+                position.x -= moveSpeed * Time.deltaTime;
             }
         }
+        else if (moveDirection == MoveDirection.Down)
+        {
+            if (Trigger.Active && transform.position.y > initialPosition.y - maxMove)
+            {
+                //transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+                position.y -= moveSpeed * Time.deltaTime;
+            }
+            else if (transform.position.y < initialPosition.y)
+            {
+                //transform.Translate(Vector3.down * moveSpeed * Time.deltaTime * -1);
+                position.y += moveSpeed * Time.deltaTime;
+            }
+        }
+        else if (moveDirection == MoveDirection.Up)
+        {
+            if (Trigger.Active && transform.position.y < initialPosition.y + maxMove)
+            {
+                //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+                position.y += moveSpeed * Time.deltaTime;
+            }
+            else if (transform.position.y > initialPosition.y)
+            {
+                //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime * -1);
+                position.y -= moveSpeed * Time.deltaTime;
+            }
+        }
+        transform.position = position;
     }
 }
