@@ -5,22 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class poison2 : MonoBehaviour
 {
-    private Collider2D floorCollider;
-
-    void Start()
-    {
-        floorCollider = GetComponent<Collider2D>();
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // 충돌한 오브젝트의 이름에서 "(Clone)"을 제거하고 앞뒤 공백을 제거
+        string objectName = collision.gameObject.name.Replace("(Clone)", "").Trim();
+
+        // 이름이 "SlimeMedium2"인지 확인
+        if (objectName == "SlimeSmall3")
         {
-            // 플레이어는 통과할 수 있으므로 아무 동작도 하지 않음
+            // 특정 이름의 오브젝트는 통과할 수 있으므로 아무 동작도 하지 않음
         }
         else
         {
-            Debug.Log("게임 오버! 플레이어가 아닌 캐릭터가 바닥에 닿았음.");
+            Debug.Log("죽음! SlimeSmall3가 아닌 오브젝트가 독바닥에 닿았습니다.");
             RestartScene();
         }
     }
