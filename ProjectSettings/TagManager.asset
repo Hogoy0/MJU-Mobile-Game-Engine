@@ -4,22 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Platform
-  - Break
-  - Green
-  - Red
+  - Drop
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Tile
+  - 
   - Water
   - UI
-  - SelectedSlime
-  - Slime
-  - Chain
-  - Lever
-  - Box
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

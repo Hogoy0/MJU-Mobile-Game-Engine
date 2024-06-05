@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7549174508609184723}
   - component: {fileID: 5398307693062922184}
   - component: {fileID: 8700451881193526338}
+  - component: {fileID: -2832207612336571481}
   m_Layer: 0
   m_Name: SlimeLarge1
   m_TagString: Player
@@ -278,3 +279,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2832207612336571481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092068625561939683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fe97854999bca4bbc2b47fef4eb257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

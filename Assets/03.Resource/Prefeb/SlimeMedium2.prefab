@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 556700119693055422}
   - component: {fileID: 743880697487574817}
   - component: {fileID: 5776430011725200099}
-  m_Layer: 7
+  - component: {fileID: -7032582659695186246}
+  m_Layer: 0
   m_Name: SlimeMedium2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -181,3 +182,15 @@ MonoBehaviour:
   boxCastDistance: 0.1
   ListNumber: 10
   SlimeSize: 0
+--- !u!114 &-7032582659695186246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591174487216460338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fe97854999bca4bbc2b47fef4eb257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
