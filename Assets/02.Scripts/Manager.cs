@@ -19,7 +19,10 @@ public class Manager : MonoBehaviour
     public int selectedIndex = 0;
     public int DropCounting = 0;
     Vector3 pos;
-    Vector3 offset = new Vector3(1f, 0f, 0f);
+    Vector3 offset = new Vector3(0.5f, 0f, 0f);
+
+    public AudioSource MurgeSound;
+    public AudioSource SplitSound;
     void Start()
     {
         
@@ -141,6 +144,7 @@ public class Manager : MonoBehaviour
             if (SelectedSlimeSize > 1)
             {
                 Split();
+                SplitSound.Play();
             }
         }
     }
@@ -149,6 +153,7 @@ public class Manager : MonoBehaviour
     {
         CheckSelectedSlimeSize();
         murge();
+        MurgeSound.Play();
     }
 
     public void UIButtonSlimeSelectionChanger()

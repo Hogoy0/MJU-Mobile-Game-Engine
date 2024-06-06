@@ -23,6 +23,7 @@ public class Character : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriterenderer;
     AudioSource JumpSound;
+    public AudioSource MurgeSound;
 
 
     void Awake()
@@ -173,9 +174,11 @@ public class Character : MonoBehaviour
        
         if (rigid.velocity.y < 0)
         {
-            Debug.DrawRay(transform.position, Vector2.down * 0.8f, Color.blue);
+            Debug.DrawRay(transform.position, Vector2.down * 1.0f, Color.blue);
             RaycastHit2D LandingCheck;
-            LandingCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, LayerMask.GetMask("Tile"));
+            RaycastHit2D LandingCheck2;
+            LandingCheck = Physics2D.Raycast(transform.position, Vector2.down, 1.0f, LayerMask.GetMask("Tile"));
+            LandingCheck2 = Physics2D.Raycast(transform.position, Vector2.down, 1.0f, LayerMask.GetMask("Box"));
 
             if (LandingCheck.collider != null)
             {
@@ -185,7 +188,16 @@ public class Character : MonoBehaviour
                     Debug.Log("¹Ù´Ú ÂøÁö");
                 }
             }
-           
+
+            if (LandingCheck2.collider != null)
+            {
+                if (LandingCheck2.distance < 0.5f)
+                {
+                    isJump = false;
+                    Debug.Log("¹Ù´Ú ÂøÁö");
+                }
+            }
+
 
         }
     }
