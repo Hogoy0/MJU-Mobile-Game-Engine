@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602940960911064227, guid: e00695c45c5ecef489641c2db32f9b72, type: 3}
       propertyPath: m_Name
-      value: Button_3
+      value: Button_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -272,10 +272,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_trigger1: {fileID: 1001453537}
-  o_trigger2: {fileID: 0}
+  o_trigger2: {fileID: 1001453537}
   moveSpeed: 2
   maxMove: 2
-  moveDirection: 2
+  moveDirection: 0
 --- !u!1001 &138660336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -910,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602940960911064227, guid: e00695c45c5ecef489641c2db32f9b72, type: 3}
       propertyPath: m_Name
-      value: Button_4
+      value: Button_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_trigger1: {fileID: 476792750}
-  o_trigger2: {fileID: 0}
+  o_trigger2: {fileID: 476792750}
   moveSpeed: 1
   maxMove: 2
   moveDirection: 2
@@ -962,10 +962,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_trigger1: {fileID: 1001453537}
-  o_trigger2: {fileID: 0}
+  o_trigger2: {fileID: 1001453537}
   moveSpeed: 2
   maxMove: 2
-  moveDirection: 3
+  moveDirection: 0
 --- !u!1 &775165664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,7 +2621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602940960911064227, guid: e00695c45c5ecef489641c2db32f9b72, type: 3}
       propertyPath: m_Name
-      value: Button_2
+      value: Button_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3667,7 +3667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_trigger1: {fileID: 910284477}
-  o_trigger2: {fileID: 0}
+  o_trigger2: {fileID: 910284477}
   moveSpeed: 1
   maxMove: 2
   moveDirection: 2
@@ -3901,7 +3901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   o_trigger1: {fileID: 21762941}
-  o_trigger2: {fileID: 0}
+  o_trigger2: {fileID: 21762941}
   moveSpeed: 1
   maxMove: 2
   moveDirection: 2
