@@ -13,6 +13,7 @@ public class EscapeDoor : MonoBehaviour
     string LoadSceneName;
     public GameObject ClearUI;
     public int DropCounting = 0;
+    string NextStage;
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class EscapeDoor : MonoBehaviour
         Debug.Log(sceneName);
         Debug.Log(parts[0]);
         Debug.Log(parts[1]);
+        NextStage = "Chap" + parts[0] + "_stage";
+        Debug.Log("다음 스테이지는 " + NextStage);
         SaveKey = "Chap" + parts[0] + "_stage" + parts[1];
         SaveDropKey = "Chap" + parts[0] + "_stage" + parts[1] + "Drop";
         Debug.Log(SaveKey);
@@ -41,7 +44,6 @@ public class EscapeDoor : MonoBehaviour
             PlayerPrefs.SetInt(SaveDropKey, DropCounting);
             PlayerPrefs.Save();
             ClearUI.SetActive(true);
-            Invoke("LoadChapScene", delay);
         }
     }
 
@@ -65,6 +67,20 @@ public class EscapeDoor : MonoBehaviour
         else if (ChapNum == 3)
         {
             LoadSceneName = "Chap3Scene";
+        }
+
+
+    }
+
+    public void ToNextStage()
+    {
+        int NextStageNum = int.Parse(parts[1]);
+        NextStageNum += 1;
+        if (NextStageNum < 6)
+        {
+            string NextStageStr = NextStageNum.ToString();
+            string NextLoadScene = NextStage + NextStageStr;
+            SceneManager.LoadScene(NextLoadScene);
         }
 
     }

@@ -22,7 +22,10 @@ public class DropCounting : MonoBehaviour
     {
         
         Debug.Log("´«¹° ¸Ô¾ú´ç");
-        EscapeDoor.GetComponent<EscapeDoor>().DropCounting += 1;
+        if (EscapeDoor != null )
+        {
+            EscapeDoor.GetComponent<EscapeDoor>().DropCounting += 1;
+        }
         
     }
 }
