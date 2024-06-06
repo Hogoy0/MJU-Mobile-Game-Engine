@@ -180,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7efc8461cc399fd4a8d5a054f5f9b664, type: 3}
+--- !u!1 &331778948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4509000238863806149, guid: 11cd772701130c6499e289ae401edde5, type: 3}
+  m_PrefabInstance: {fileID: 1168493484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &405002128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2438,7 +2443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7132a9bad0b0e244ea7da34ffa9b52ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  o_trigger: {fileID: 0}
+  o_trigger1: {fileID: 331778948}
+  o_trigger2: {fileID: 331778948}
   moveSpeed: 1
   maxMove: 2
   moveDirection: 2

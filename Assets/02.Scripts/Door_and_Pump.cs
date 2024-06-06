@@ -6,8 +6,12 @@ using UnityEngine.UIElements;
 public class Door_and_Pump : MonoBehaviour
 {
     [SerializeField]
-    GameObject o_trigger;
-    Lever_and_Button Trigger;
+    GameObject o_trigger1;
+    [SerializeField]
+    GameObject o_trigger2;
+
+    Lever_and_Button Trigger1;
+    Lever_and_Button Trigger2;
 
     [SerializeField]
     private float moveSpeed = 1f;
@@ -31,7 +35,9 @@ public class Door_and_Pump : MonoBehaviour
 
     void Start()
     {
-        Trigger = o_trigger.GetComponent<Lever_and_Button>();
+        Trigger1 = o_trigger1.GetComponent<Lever_and_Button>();
+        Trigger2 = o_trigger2.GetComponent<Lever_and_Button>();
+
         initialPosition = transform.position;
     }
 
@@ -41,52 +47,58 @@ public class Door_and_Pump : MonoBehaviour
         Vector3 position = transform.position;
         if (moveDirection == MoveDirection.Left)
         {
-            if (Trigger.Active && transform.position.x > initialPosition.x - maxMove)
+            if (Trigger1.Active || Trigger2.Active)
             {
-                position.x -= moveSpeed * Time.deltaTime;
+                if (transform.position.x > initialPosition.x - maxMove)
+                {
+                    position.x -= moveSpeed * Time.deltaTime;
+                }
             }
             else if (transform.position.x < initialPosition.x)
             {
-                //transform.Translate(Vector3.left * moveSpeed * Time.deltaTime * -1);
                 position.x += moveSpeed * Time.deltaTime;
             }
         }
         else if (moveDirection == MoveDirection.Right)
         {
-            if (Trigger.Active && transform.position.x < initialPosition.x + maxMove)
+            if (Trigger1.Active || Trigger2.Active)
             {
-                //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-                position.x += moveSpeed * Time.deltaTime;
+                if (transform.position.x < initialPosition.x + maxMove)
+                {
+                    position.x += moveSpeed * Time.deltaTime;
+                }
             }
             else if (transform.position.x > initialPosition.x)
             {
-                //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime * -1);
                 position.x -= moveSpeed * Time.deltaTime;
             }
         }
         else if (moveDirection == MoveDirection.Down)
         {
-            if (Trigger.Active && transform.position.y > initialPosition.y - maxMove)
+            if (Trigger1.Active || Trigger2.Active)
             {
-                //transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
-                position.y -= moveSpeed * Time.deltaTime;
+                if (transform.position.y > initialPosition.y - maxMove)
+                {
+                    position.y -= moveSpeed * Time.deltaTime;
+                }
             }
             else if (transform.position.y < initialPosition.y)
             {
-                //transform.Translate(Vector3.down * moveSpeed * Time.deltaTime * -1);
                 position.y += moveSpeed * Time.deltaTime;
             }
         }
         else if (moveDirection == MoveDirection.Up)
         {
-            if (Trigger.Active && transform.position.y < initialPosition.y + maxMove)
+            if (Trigger1.Active || Trigger2.Active)
             {
-                //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
-                position.y += moveSpeed * Time.deltaTime;
+                if (transform.position.y < initialPosition.y + maxMove)
+                {
+                    position.y += moveSpeed * Time.deltaTime;
+
+                }
             }
             else if (transform.position.y > initialPosition.y)
             {
-                //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime * -1);
                 position.y -= moveSpeed * Time.deltaTime;
             }
         }
