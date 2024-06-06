@@ -4749,6 +4749,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -46
       objectReference: {fileID: 0}
+    - target: {fileID: 3762159688984950472, guid: 35c17166f7889e34b9323fdec5dd872c, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4509000238863806149, guid: 35c17166f7889e34b9323fdec5dd872c, type: 3}
       propertyPath: m_Name
       value: Lever_2
