@@ -8,6 +8,9 @@ TagManager:
   - Break
   - Green
   - Red
+  - Drop
+  - Poison
+  - ColorWater
   layers:
   - Default
   - TransparentFX

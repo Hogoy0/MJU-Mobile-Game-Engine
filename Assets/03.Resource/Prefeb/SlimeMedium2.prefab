@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5776430011725200099}
   - component: {fileID: -7032582659695186246}
   - component: {fileID: 750463269046503462}
+  - component: {fileID: 8455446626714967115}
   m_Layer: 0
   m_Name: SlimeMedium2
   m_TagString: Player
@@ -291,3 +292,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8455446626714967115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591174487216460338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a62865a8efe113408039f3c3246b0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
