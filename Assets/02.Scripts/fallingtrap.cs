@@ -1,33 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class fallingtrap : MonoBehaviour
 {
-   public float fallDelay = 1f; // 함정 대기 시간
-    public float fallSpeed = 5f; // 떨어지는 속도 영상이나 이런거 보면 보통 5로 하길래ㅎㅎ
+   private SpriteRenderer spriteRenderer;
+    private bool isTransparent = true; // 초기에 투명한 상태로 설정
+    private Color originalColor; //원래 색깔 저장
+    private Rigidbody2D rb;
+    public Vector2 moveDirection = Vector2.down; // 기본 이동 방향은 아래로
+    public float moveSpeed = 5f; // 이동 속도 설정
 
-    private bool isFallen = false;
-
-    void OnTriggerEnter2D(Collider2D other)
+    void Start()
     {
-        if (other.CompareTag("Player") && !isFallen)
+        spriteRenderer = GetComponent<SpriteRenderer>(); // 스프라이트 불러오고
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 불러오기
+        originalColor = spriteRenderer.color; // 원래색 저장
+        SetTransparency(true); // 초기에 투명하게 설정
+        rb.isKinematic = true; // 초기에는 물리적인 힘을 받지 않도록 설정
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // 함정이 작동하기 전의 대기 시간 후 함정을 작동시킴
-            Invoke("ActivateTrap", fallDelay);
+            SetTransparency(false); // 캐릭터와 충돌 시 다시 원래대로 돌아오게 설정
+            Debug.Log("크크루삥뽕"); // 충돌 발생 메시지!!
+            rb.isKinematic = false; // 물리적인 힘을 받도록 설정
+            rb.velocity = moveDirection.normalized * moveSpeed; // 지정된 방향으로 이동 시작
         }
     }
 
-    void ActivateTrap()
+    void OnTriggerExit2D(Collider2D collision)
     {
-        // 함정이 작동되면 Rigidbody2D를 활성화하여 함정이 떨어지도록 함
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (collision.gameObject.CompareTag("Player")) // 태그 비교
         {
-            rb.isKinematic = false;
-            rb.velocity = Vector2.down * fallSpeed;
+            SetTransparency(true); // 캐릭터와 충돌이 끝나면 다시 투명하게 설정
         }
-        // 함정이 작동된 후 다시 함정이 작동하지 않도록 플래그 설정
-        isFallen = true;
+    }
+
+    void SetTransparency(bool transparent)
+    {
+        if (transparent)
+        {
+            spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f); // 투명한 색으로 변경
+        }
+        else
+        {
+            spriteRenderer.color = originalColor; // 원래의 색으로 복원
+        }
+
+        isTransparent = transparent;
+    }
+
+    void RestartScene()
+    {
+        // 현재 씬을 다시 로드
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 타임 스케일을 1로 설정하여 게임이 정상 속도로 진행되도록 함
+        Time.timeScale = 1f;
     }
 }
