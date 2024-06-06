@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour
     public int splitcounting = 0;
     public int SelectedSlimeSize = 0;
     public int selectedIndex = 0;
+    public int DropCounting = 0;
     Vector3 pos;
     Vector3 offset = new Vector3(1f, 0f, 0f);
     void Start()

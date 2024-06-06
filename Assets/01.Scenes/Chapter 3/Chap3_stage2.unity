@@ -1936,6 +1936,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 889339986}
     - target: {fileID: 5983815342104296628, guid: ed2b91f93603f2a4490d729b7053345c, type: 3}
+      propertyPath: o_trigger1
+      value: 
+      objectReference: {fileID: 889339986}
+    - target: {fileID: 5983815342104296628, guid: ed2b91f93603f2a4490d729b7053345c, type: 3}
+      propertyPath: o_trigger2
+      value: 
+      objectReference: {fileID: 889339986}
+    - target: {fileID: 5983815342104296628, guid: ed2b91f93603f2a4490d729b7053345c, type: 3}
       propertyPath: moveDirection
       value: 2
       objectReference: {fileID: 0}
@@ -2021,6 +2029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1258970781236567362, guid: 3327200add1ff57468ce0635f2455932, type: 3}
+      propertyPath: EscapeDoor
+      value: 
+      objectReference: {fileID: 1102185717}
     - target: {fileID: 1996777368027192712, guid: 3327200add1ff57468ce0635f2455932, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -2205,6 +2217,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+--- !u!1 &1102185717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2098447659363677171, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+  m_PrefabInstance: {fileID: 1055847837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1207975689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1258970781236567362, guid: 3327200add1ff57468ce0635f2455932, type: 3}
+      propertyPath: EscapeDoor
+      value: 
+      objectReference: {fileID: 1102185717}
     - target: {fileID: 1996777368027192712, guid: 3327200add1ff57468ce0635f2455932, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -2626,6 +2647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1258970781236567362, guid: 3327200add1ff57468ce0635f2455932, type: 3}
+      propertyPath: EscapeDoor
+      value: 
+      objectReference: {fileID: 1102185717}
     - target: {fileID: 1996777368027192712, guid: 3327200add1ff57468ce0635f2455932, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2

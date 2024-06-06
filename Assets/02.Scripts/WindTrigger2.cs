@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindTrigger : MonoBehaviour
+public class WindTrigger2 : MonoBehaviour
 {
 
     public GameObject WindObject;
@@ -21,16 +21,14 @@ public class WindTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (Trigger.Active == true)
         {
-            WindObject.SetActive(true);
+            WindObject.SetActive(false);
         }
 
         if (Trigger.Active == false)
         {
-            WindObject.SetActive(false);
+            WindObject.SetActive(true);
 
         }
 

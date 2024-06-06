@@ -8,9 +8,11 @@ public class EscapeDoor : MonoBehaviour
 {
     string sceneName;
     string SaveKey;
+    string SaveDropKey;
     string[] parts;
     string LoadSceneName;
     public GameObject ClearUI;
+    public int DropCounting = 0;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class EscapeDoor : MonoBehaviour
         Debug.Log(parts[0]);
         Debug.Log(parts[1]);
         SaveKey = "Chap" + parts[0] + "_stage" + parts[1];
+        SaveDropKey = "Chap" + parts[0] + "_stage" + parts[1] + "Drop";
         Debug.Log(SaveKey);
         GetLoadSceneName();
         Debug.Log(LoadSceneName);
@@ -35,6 +38,7 @@ public class EscapeDoor : MonoBehaviour
             float delay = 3.0f;
             Debug.Log("Å¬¸®¾î");
             PlayerPrefs.SetInt(SaveKey, 1);
+            PlayerPrefs.SetInt(SaveDropKey, DropCounting);
             PlayerPrefs.Save();
             ClearUI.SetActive(true);
             Invoke("LoadChapScene", delay);
