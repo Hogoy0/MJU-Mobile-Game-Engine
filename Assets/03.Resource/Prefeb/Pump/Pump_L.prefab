@@ -143,10 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7132a9bad0b0e244ea7da34ffa9b52ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  o_trigger: {fileID: 0}
+  o_trigger1: {fileID: 0}
+  o_trigger2: {fileID: 0}
   moveSpeed: 1
-  maxMove: 0
-  moveDirection: 0
+  maxMove: 3
+  moveDirection: 2
 --- !u!1 &8509929776446467690
 GameObject:
   m_ObjectHideFlags: 0

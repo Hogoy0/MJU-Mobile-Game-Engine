@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8777100794869228895}
   - component: {fileID: 5919966541482896804}
   - component: {fileID: 5674254849554875501}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\uC2A4\uD504\uB77C\uC774\uD2B8 \uBAA8\uC74C_10 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 8734002445181250079}
   - component: {fileID: 8582520540585464686}
   - component: {fileID: 8194173107459566141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MovingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 3060291456228487149}
   - component: {fileID: 1695132818153021018}
   - component: {fileID: 5276083623485809367}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\uC2A4\uD504\uB77C\uC774\uD2B8 \uBAA8\uC74C_10"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
