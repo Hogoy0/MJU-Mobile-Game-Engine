@@ -21,16 +21,13 @@ public class WindTrigger2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Trigger.Active == true)
+        if (Trigger.Active)
         {
             WindObject.SetActive(false);
         }
-
-        if (Trigger.Active == false)
+        else
         {
             WindObject.SetActive(true);
-
         }
-
     }
 }
