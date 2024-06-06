@@ -124,7 +124,6 @@ public class Character : MonoBehaviour
             if (LandingCheck.collider != null)
             {
                 isJump = false;
-                Debug.Log("isJump ¼öÁ¤");
             }
 
         }
@@ -156,15 +155,9 @@ public class Character : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       /* if (collision.gameObject.CompareTag("Platform")) 
-        {
-            Debug.Log("ÇÃ·§Æû°ú Ãæµ¹!");
-            isJump = false;
-        }
-       */
+
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("½½¶óÀÓ°ú Ãæµ¹!");
             isJump = false;
         }
     }
@@ -185,7 +178,6 @@ public class Character : MonoBehaviour
                 if (LandingCheck.distance < 0.5f)
                 {
                     isJump = false;
-                    Debug.Log("¹Ù´Ú ÂøÁö");
                 }
             }
 
@@ -194,7 +186,6 @@ public class Character : MonoBehaviour
                 if (LandingCheck2.distance < 0.5f)
                 {
                     isJump = false;
-                    Debug.Log("¹Ù´Ú ÂøÁö");
                 }
             }
 

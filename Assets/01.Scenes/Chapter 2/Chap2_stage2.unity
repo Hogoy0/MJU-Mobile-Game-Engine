@@ -710,7 +710,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9205872218406985706, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1207975691}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
 --- !u!1 &704895585 stripped
@@ -3367,7 +3370,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 654590774a880c8438214ea34c9db08f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6392157, g: 0.6392157, b: 0.6392157, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3386,11 +3389,11 @@ Transform:
   m_GameObject: {fileID: 1207975689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1590810190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1422838142
 PrefabInstance:
@@ -3469,6 +3472,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2949835231301665306, guid: 25481c7ea96e5f74f95fedc669db072e, type: 3}
   m_PrefabInstance: {fileID: 126198922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1590810190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9205872218406985706, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+  m_PrefabInstance: {fileID: 704895584}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1605566178
 GameObject:
@@ -3915,7 +3923,6 @@ SceneRoots:
   - {fileID: 704895584}
   - {fileID: 447773647}
   - {fileID: 1715582987}
-  - {fileID: 1207975691}
   - {fileID: 6035401023813389012}
   - {fileID: 6833365999491123715}
   - {fileID: 855666092}

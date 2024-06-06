@@ -31,9 +31,9 @@ public class StageManager : MonoBehaviour
 
         CurrentChap = SceneManager.GetActiveScene().name;
         number = Regex.Match(CurrentChap, @"\d+").Value;
-        Debug.Log(number);
+
         Key = "Chap" + number + "_stage";
-        Debug.Log(Key);
+
 
         CheckPreviousChap();
 
@@ -41,8 +41,6 @@ public class StageManager : MonoBehaviour
         {
 
             int stageNum = i;
-            Debug.Log(stageNum);
-            Debug.Log(Key + stageNum);
             int stageClearInfo = PlayerPrefs.GetInt(Key + stageNum, 0);
             if (stageClearInfo == 1)
             {
@@ -62,7 +60,7 @@ public class StageManager : MonoBehaviour
             int stagenum = j + 1;
 
             int stageDropInfo = PlayerPrefs.GetInt(Key + stagenum + "Drop", 0);
-            Debug.Log("¸ÔÀº ´«¹° °³¼ö´Â~ " + stageDropInfo);
+
 
             if (stageDropInfo == 1)
             {

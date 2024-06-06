@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
-using static UnityEditor.PlayerSettings;
+// using static UnityEditor.PlayerSettings;
 
 public class Manager : MonoBehaviour
 {
@@ -160,15 +160,15 @@ public class Manager : MonoBehaviour
     {
         int originalIndex = selectedIndex;
 
-        // ���� �ε����� ã��
+
         do
         {
             selectedIndex = (selectedIndex + 1) % slimelist.Length;
-            Debug.Log(slimelist.Length);
+
         }
         while (slimelist[selectedIndex] == null && selectedIndex != originalIndex);
 
-        // ���� ĳ���� ����
+
         if (slimelist[selectedIndex] != null)
         {
             SelectCharacter(selectedIndex);
@@ -351,33 +351,26 @@ public class Manager : MonoBehaviour
     {
         if (slimelist[playerinput].GetComponent<Character>().rayhit.collider != null)   
         {
-            Debug.Log("��ü!!");
             GameObject WillMurgeSlime = slimelist[playerinput].GetComponent<Character>().rayhit.collider.gameObject; // �ε��� ������Ʈ�� ������ �޾ƿ�
             if (SelectedSlimeSize == WillMurgeSlime.GetComponent<Character>().SlimeSize)
             {
-                Debug.Log(WillMurgeSlime.GetComponent<Character>().SlimeSize);
                 pos = WillMurgeSlime.transform.position + slimelist[playerinput].transform.position; // �����ϴ� �����Ӱ� �ε��� ������ �߰� �Ÿ��� ����ؼ� MiddlePos�� �������
-                pos = pos / 2;
-                Debug.Log(pos);                                                                                   
+                pos = pos / 2;                                                                               
                 int WillDesNum1 = slimelist[playerinput].GetComponent<Character>().ListNumber;          //�÷��̾ �����ϰ� �ִ� �������� �����Ӹ���Ʈ�� ���° �迭�� �� �ִ��� ������ ����
                 int WillDesNum2 = WillMurgeSlime.GetComponent<Character>().ListNumber;                  //�÷��̾ �����ϰ� �ִ� �����Ӱ� �ε��� �������� �����Ӹ���Ʈ�� ���° �迭�� �� �ִ��� ������ ����
                 Destroy(slimelist[playerinput].GetComponent<Character>().rayhit.collider.gameObject);   //�����ϴ� �����Ӱ� �ε��� ������ �ı�
                 slimelist[WillDesNum2] = null;                                                          //��� �ı��� �������� �� �־��� �����Ӹ���Ʈ�� �迭�� null�� �ʱ�ȭ
                 Destroy(slimelist[playerinput]);                                                        //�����ϰ� �ִ� ������ �ı�
                 slimelist[WillDesNum1] = null;                                                          //�����ϰ� �ִ� �������� �� �־��� �����Ӹ���Ʈ�� �迭�� null�� �ʱ�ȭ
-                Debug.Log("��ġ�� �� selectedslimesize��");
-                Debug.Log(SelectedSlimeSize);
                 if (SelectedSlimeSize == 1)
                 {
                     MurgeSlimeCreate(SlimePrefebList[1]);
-                    Debug.Log("���� ���� ������ ������");
-                    Debug.Log(SelectedSlimeSize);
+
                 }
                 if (SelectedSlimeSize == 2)
                 {
                     MurgeSlimeCreate(SlimePrefebList[0]);
-                    Debug.Log("�߰� ������ ������");
-                    Debug.Log(SelectedSlimeSize);
+
                 }
 
             }

@@ -35,17 +35,14 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(CurrentScene.name);
         Time.timeScale = 1f;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Debug.Log("GG요");
     }
 
     public void ToMain(){
-        Debug.Log("아직 미구현입니다...");
         //Time.timeScale = 1f;
         //SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame(){
-        Debug.Log("죽어야끝나....");
         Application.Quit();
     }
 }

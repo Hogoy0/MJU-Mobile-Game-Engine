@@ -43,7 +43,6 @@ public class UIFuncion : MonoBehaviour
         SceneManager.LoadScene(CurrentScene.name);
         Time.timeScale = 1f;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Debug.Log("GG¿ä");
     }
 
     public void Tomain()
