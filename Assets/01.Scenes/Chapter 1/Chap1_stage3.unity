@@ -2240,6 +2240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop_1
       objectReference: {fileID: 0}
+    - target: {fileID: 6567235344511303494, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
+      propertyPath: EscapeDoor
+      value: 
+      objectReference: {fileID: 1293579968}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.91
@@ -4513,6 +4517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1258970781236567362, guid: 3327200add1ff57468ce0635f2455932, type: 3}
+      propertyPath: EscapeDoor
+      value: 
+      objectReference: {fileID: 1293579968}
     - target: {fileID: 1996777368027192712, guid: 3327200add1ff57468ce0635f2455932, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.5
@@ -4788,6 +4796,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+--- !u!1 &1293579968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2098447659363677171, guid: 27624e99fd07850459e14f3c21064c17, type: 3}
+  m_PrefabInstance: {fileID: 1293579967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1353467591
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,6 +5094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop_1
       objectReference: {fileID: 0}
+    - target: {fileID: 6567235344511303494, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
+      propertyPath: EscapeDoor
+      value: 
+      objectReference: {fileID: 1293579968}
     - target: {fileID: 8440381629723364741, guid: 8e69ccf1fd4d2b7428eddc7e469f05aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
