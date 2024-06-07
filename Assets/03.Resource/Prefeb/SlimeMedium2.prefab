@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 136952817632106670}
   - component: {fileID: 2527408261045692478}
   - component: {fileID: 556700119693055422}
-  - component: {fileID: 743880697487574817}
   - component: {fileID: 5776430011725200099}
   - component: {fileID: -7032582659695186246}
   - component: {fileID: 750463269046503462}
   - component: {fileID: 8455446626714967115}
+  - component: {fileID: 631330338645222838}
   m_Layer: 0
   m_Name: SlimeMedium2
   m_TagString: Player
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 497154153, guid: f57e57a4a2ba01b40b71b22031735fb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,51 +117,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &743880697487574817
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2591174487216460338}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.98039216, y: 0.84313726}
-    newSize: {x: 0.98039216, y: 0.84313726}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.98039216, y: 0.84313726}
-  m_EdgeRadius: 0
 --- !u!114 &5776430011725200099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +139,7 @@ MonoBehaviour:
   boxCastDistance: 0.1
   ListNumber: 10
   SlimeSize: 0
+  MurgeSound: {fileID: 0}
 --- !u!114 &-7032582659695186246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fe97854999bca4bbc2b47fef4eb257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 3792896090910523689, guid: 92a698cf4ed38a34b9adc721f6c34a00, type: 3}
 --- !u!82 &750463269046503462
 AudioSource:
   m_ObjectHideFlags: 0
@@ -305,3 +260,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a62865a8efe113408039f3c3246b0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &631330338645222838
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591174487216460338}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.98039216, y: 0.84313726}
+  m_Direction: 1
