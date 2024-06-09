@@ -8557,7 +8557,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2313986136537540678, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.87
+      value: -3.13
       objectReference: {fileID: 0}
     - target: {fileID: 2313986136537540678, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8581,7 +8581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2313986136537540678, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.3907311
+      value: -0.3907311
       objectReference: {fileID: 0}
     - target: {fileID: 2313986136537540678, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8593,7 +8593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2313986136537540678, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 46
+      value: -46
       objectReference: {fileID: 0}
     - target: {fileID: 3762159688984950472, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_SortingOrder
@@ -8605,19 +8605,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6406501970515214842, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -2.765942
+      value: -4.244056
       objectReference: {fileID: 0}
     - target: {fileID: 6406501970515214842, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -1.1412219
+      value: -1.1612239
       objectReference: {fileID: 0}
     - target: {fileID: 6406501970515214842, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_AngleLimits.m_LowerAngle
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6406501970515214842, guid: 11cd772701130c6499e289ae401edde5, type: 3}
       propertyPath: m_AngleLimits.m_UpperAngle
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
