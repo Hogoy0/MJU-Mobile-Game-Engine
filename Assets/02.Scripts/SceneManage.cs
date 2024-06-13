@@ -107,5 +107,24 @@ public class SceneManage : MonoBehaviour
     {
         SceneManager.LoadScene("Chap3_stage5");
     }
+
+    public void GoCutScene()
+    {
+        SceneManager.LoadScene("CutScene");
+    }
+
+    public void GoOpening()
+    {
+        SceneManager.LoadScene("Opening");
+    }
+
+    public void GoEnding_Normal()
+    {
+        SceneManager.LoadScene("NormalEnding");
+    }
+    public void GoEnding_Hidden()
+    {
+        SceneManager.LoadScene("HiddenEnding");
+    }
 }
 

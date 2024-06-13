@@ -65,4 +65,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/Chapter 3/Chap3_stage5.unity
     guid: 3532507bba10c354b98138b039df3484
+  - enabled: 1
+    path: Assets/01.Scenes/CutScene.unity
+    guid: 70ffaaea27c0f1542a843401f8fa13b5
+  - enabled: 1
+    path: Assets/01.Scenes/Opening.unity
+    guid: 22a1a2c7961dc5046a45dbd2ffc7281a
+  - enabled: 1
+    path: Assets/01.Scenes/NormalEnding.unity
+    guid: 8c199f28a26b9ad4e802226089b264de
+  - enabled: 1
+    path: Assets/01.Scenes/HiddenEnding.unity
+    guid: 964dde801f4baad41b243533095a5505
   m_configObjects: {}

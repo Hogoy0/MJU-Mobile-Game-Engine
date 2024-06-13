@@ -58,18 +58,18 @@ public class StageManager : MonoBehaviour
             Dropimg3.sprite = DropOriginal;
 
             int stagenum = j + 1;
+            Debug.Log("스테이지 넘버" + stagenum);
 
             int stageDropInfo = PlayerPrefs.GetInt(Key + stagenum + "Drop", 0);
-
+            Debug.Log(stageDropInfo);  
 
             if (stageDropInfo == 1)
             {
                 Dropimg1.sprite = DropSprite;
-                Dropimg2.sprite = DropSprite;
             }
             else if (stageDropInfo == 2)
             {
-                Dropimg2.sprite = DropSprite;
+                Dropimg1.sprite = DropSprite;
                 Dropimg2.sprite = DropSprite;
             }
             else if (stageDropInfo == 3)
